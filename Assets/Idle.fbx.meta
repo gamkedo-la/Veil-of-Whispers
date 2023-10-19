@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: metarig|Idleanim
-      takeName: metarig|Idleanim
-      internalID: 6869860651350959545
+      name: Armature|Idleanim
+      takeName: Armature|Idleanim
+      internalID: 5566640185539121697
       firstFrame: 0
-      lastFrame: 88
+      lastFrame: 75
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
