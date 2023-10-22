@@ -9,7 +9,6 @@ public class PlayerMovementState : MonoBehaviour
     Vector2 movementInput;
     public float moveSpeed;
     private Transform mainCameraTransform;
-    public Animator animator;
     private Rigidbody rb;
 
     void Start()
@@ -21,17 +20,6 @@ public class PlayerMovementState : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
-
-        if (context.performed)
-        {
-            animator.SetFloat("move", 1);
-        }
-
-        else
-        {
-            animator.SetFloat("move", 0);
-        }
-
     }
 
     public void OnLook(InputAction.CallbackContext context)
