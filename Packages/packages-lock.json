@@ -1,14 +1,5 @@
 {
   "dependencies": {
-    "com.bennykok.unity-hotspot-uv": {
-      "version": "https://github.com/BennyKok/unity-hotspot-uv.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.probuilder": "4.2.3"
-      },
-      "hash": "a70fc1a04ee13460e45919a24cf6bd7d86e4a071"
-    },
     "com.unity.burst": {
       "version": "1.8.8",
       "depth": 1,
@@ -82,17 +73,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.probuilder": {
-      "version": "5.0.7",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.settings-manager": "1.0.3",
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.imgui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.render-pipelines.core": {
       "version": "15.0.6",
       "depth": 1,
@@ -119,13 +99,6 @@
     "com.unity.searcher": {
       "version": "4.9.2",
       "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.settings-manager": {
-      "version": "2.0.1",
-      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
