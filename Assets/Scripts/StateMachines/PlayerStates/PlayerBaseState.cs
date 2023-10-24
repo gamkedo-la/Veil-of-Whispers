@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PlayerBaseState : MonoBehaviour
+public abstract class PlayerBaseState : State
 {
-    void Start()
+    protected PlayerStateMachine stateMachine;
+     
+    public PlayerBaseState(PlayerStateMachine stateMachine)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        this.stateMachine = stateMachine;
     }
 }
