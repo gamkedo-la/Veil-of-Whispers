@@ -191,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 150441334}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.089768596, y: -0.0037376124, z: -0.00033688272, w: 0.9959556}
+  m_LocalRotation: {x: -0.089761496, y: -0.0037376443, z: -0.0003368587, w: 0.99595624}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -549,7 +549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.089768596, y: -0.0037376122, z: -0.0003368827, w: 0.99595565}
+  m_LocalRotation: {x: -0.089761496, y: -0.0037376643, z: -0.0003368605, w: 0.9959563}
   m_LocalPosition: {x: 0, y: 1.043, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -999,7 +999,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033816116}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.011523966, y: -0.00000001720524, z: -1.9828574e-10, w: 0.9999336}
+  m_LocalRotation: {x: -0.011523966, y: 0.00000001720524, z: 1.9828574e-10, w: 0.9999336}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1332,7 +1332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824191407}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.05353131, y: -0.0037473827, z: -0.00020089178, w: 0.9985592}
+  m_LocalRotation: {x: -0.05352419, y: -0.0037473994, z: -0.00020086588, w: 0.99855953}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1592,7 +1592,7 @@ GameObject:
   - component: {fileID: 871721243212336374}
   - component: {fileID: 871721243212336373}
   - component: {fileID: 871721243212336372}
-  - component: {fileID: 871721243212336371}
+  - component: {fileID: 871721243212336376}
   - component: {fileID: 871721243212336375}
   m_Layer: 0
   m_Name: Player
@@ -1601,20 +1601,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &871721243212336371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871721243212336370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec9d39074ef37240bacfa7f50fc4904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 20
-  animator: {fileID: 871721243212336374}
 --- !u!136 &871721243212336372
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1696,48 +1682,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 871721243212336370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: b154febe53eca104f8225c70543271d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 88fadff470a444b4dba9f1ea34e3b73c,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 871721243212336371}
-        m_TargetAssemblyTypeName: PlayerMovementState, Assembly-CSharp
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: d76d3a3b-f64c-4496-8a9b-76c141a26fda
-    m_ActionName: 'New action map/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 609446c2-45aa-4aee-8022-7534d896b53f
-    m_ActionName: 'New action map/Look[/Mouse/delta]'
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: New action map
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+--- !u!114 &871721243212336376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871721243212336370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa70ab662712f3d4aa37bbff85bcfd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InputReader>k__BackingField: {fileID: 871721243212336375}
 --- !u!1 &909727962716140855
 GameObject:
   m_ObjectHideFlags: 0
