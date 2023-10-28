@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
 
 public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 {
     private PlayerInput playerInput;
 
-    public event Action moveEvent;
+    public Vector2 MovementValue { get; private set; }
+
 
     private void Start()
     {
@@ -19,14 +21,14 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     {
        playerInput.Player.Enable();
     }
-    public void OnLook(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    public void OnLook(InputAction.CallbackContext context)
     {
 
     }
 
-    public void OnMovement(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    public void OnMovement(InputAction.CallbackContext context)
     {
-        if (!context.performed) { return; }
-        moveEvent?.Invoke();
+        MovementValue = context.ReadValue<Vector2>();
+        Debug.Log("run");
     }
 }

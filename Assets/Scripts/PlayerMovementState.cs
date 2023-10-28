@@ -2,65 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerMovementState : MonoBehaviour
-{
-    Vector2 movementInput;
-    public float moveSpeed;
-    private Transform mainCameraTransform;
-    public Animator animator;
-    private Rigidbody rb;
-
-    void Start()
+public class PlayerMovementState : PlayerBaseState
+{ 
+    public PlayerMovementState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-        rb = GetComponent<Rigidbody>();
-        mainCameraTransform = Camera.main.transform;
+       
     }
 
-    public void Move(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            movementInput = context.ReadValue<Vector2>();
-            animator.SetFloat("move", 1);
-        }
-
-        if (!context.performed) 
-        {
-            animator.SetFloat("move", 0);
-        }
-    }
-
-    public void OnLook(InputAction.CallbackContext context)
+    public override void Enter()
     {
 
     }
-    private void FixedUpdate()
+
+    public override void Tick(float deltaTime)
     {
-        PlayerMovement();
+        Vector3 movement = new Vector3();
+
+
+        movement.x = stateMachine.InputReader.MovementValue.x;
+        movement.y = 0;
+        movement.z = stateMachine.InputReader.MovementValue.y;
+        stateMachine.transform.Translate(movement * deltaTime);
+        stateMachine.Controller.Move(movement * stateMachine.MovementSpeed * deltaTime);
+
+        if (stateMachine.InputReader.MovementValue == Vector2.zero) { return; }
+
+        stateMachine.transform.rotation = Quaternion.LookRotation(movement);
+        
     }
 
-    private void PlayerMovement() {
-
-        Vector3 movement = CalculateMovement();
-        movement *= moveSpeed;
-        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
-    }
-
-    private Vector3 CalculateMovement()
+    public override void Exit()
     {
 
-        Vector3 forward = mainCameraTransform.forward;
-        Vector3 right = mainCameraTransform.right;
-
-        forward.y = 0f;
-        right.y = 0f;
-
-        forward.Normalize();
-        right.Normalize();
-
-        return forward * movementInput.y  + right * movementInput.x;
-
     }
+
+
 }
