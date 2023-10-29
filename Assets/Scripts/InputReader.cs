@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 
 public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 {
-    private PlayerInput playerInput;
-
     public Vector2 MovementValue { get; private set; }
 
 
@@ -30,5 +28,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     {
         MovementValue = context.ReadValue<Vector2>();
         Debug.Log("run");
-    }
+    }private PlayerInput playerInput;
+
+    
 }
