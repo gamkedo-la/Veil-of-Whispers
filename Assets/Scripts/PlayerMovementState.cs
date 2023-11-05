@@ -10,6 +10,7 @@ public class PlayerMovementState : PlayerBaseState
        
     }
 
+  
     public override void Enter()
     {
 
@@ -23,7 +24,11 @@ public class PlayerMovementState : PlayerBaseState
         movement.x = stateMachine.InputReader.MovementValue.x;
         movement.y = 0;
         movement.z = stateMachine.InputReader.MovementValue.y;
-       // stateMachine.transform.Translate(movement * deltaTime);
+
+        Debug.Log($"Tick({deltaTime}), movement = {movement}, adjusted movement = {movement * stateMachine.MovementSpeed * deltaTime}");
+
+
+
         stateMachine.Controller.Move(movement * stateMachine.MovementSpeed * deltaTime);
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero) { return; }
