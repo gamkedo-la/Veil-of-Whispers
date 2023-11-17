@@ -19,8 +19,6 @@ public class PlayerMovementState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
         Vector3 movement = new Vector3();
-
-
         movement.x = stateMachine.InputReader.MovementValue.x;
         movement.y = 0;
         movement.z = stateMachine.InputReader.MovementValue.y;
@@ -33,8 +31,6 @@ public class PlayerMovementState : PlayerBaseState
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero) { return; }
 
-        stateMachine.transform.rotation = Quaternion.LookRotation(movement);
-        
     }
 
     public override void Exit()
