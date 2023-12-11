@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Axe.005
-    second: {fileID: 2100000, guid: a42a576b8f81c0a41bc8163a0571e7f2, type: 2}
+    second: {fileID: 2100000, guid: 6746e35b9b64e284bbe1032a8f52d0b1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eyes
-    second: {fileID: 2100000, guid: a36c4a94816eaea4abe7330a0300b975, type: 2}
+    second: {fileID: 2100000, guid: e34434a75236b034f8bcf559df6a8482, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Upper Body
-    second: {fileID: 2100000, guid: 0cb28afcc1800c44396a0dfe288ed292, type: 2}
+    second: {fileID: 2100000, guid: 8eb65a65e5dce114285368dc7aa0e729, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: shoes
-    second: {fileID: 2100000, guid: 9c4a4ee322cd7b54b90d134265eb7059, type: 2}
+    second: {fileID: 2100000, guid: 3cdc1d9ceae5b924e9384824e6aa204b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

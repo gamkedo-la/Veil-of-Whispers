@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 99d81a7da70636a418a06624392d626d
+guid: 5a4516e1016d58844bf1e6d574d4fa71
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,23 +7,38 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Axe.005
-    second: {fileID: 2100000, guid: 7b14ecfa4ab160a4898e314fa468083f, type: 2}
+      name: Belt
+    second: {fileID: 2100000, guid: 3830cc909a581134f94e960bbf470ff1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: fe1cedebb4a4f5b4b85ddb15cd8efb62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Collar
+    second: {fileID: 2100000, guid: 05c1eda19dfb92349b8e7f67f5ce5233, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eyes
-    second: {fileID: 2100000, guid: d9844da7eb81a1146a7bf580c80a5431, type: 2}
+    second: {fileID: 2100000, guid: 237dc5bb4609140439f95974d7403c96, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Upper Body
-    second: {fileID: 2100000, guid: be7199d4e30d8084aa0edcee190c0519, type: 2}
+      name: Hairs
+    second: {fileID: 2100000, guid: 5b26fcb45f961e244aa1c4d0c5882487, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: shoes
-    second: {fileID: 2100000, guid: c37d92342eba19b42b7e1129594541b0, type: 2}
+      name: Shirt
+    second: {fileID: 2100000, guid: 9040d827b3878394da2446388d4d3b2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoes
+    second: {fileID: 2100000, guid: 80d0d9738ce309a439326c0854722520, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
