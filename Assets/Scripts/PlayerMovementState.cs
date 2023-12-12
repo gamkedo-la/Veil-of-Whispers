@@ -25,15 +25,12 @@ public class PlayerMovementState : PlayerBaseState
         movement.y = 0;
         movement.z = stateMachine.InputReader.MovementValue.y;
 
-        Debug.Log($"Tick({deltaTime}), movement = {movement}, adjusted movement = {movement * stateMachine.MovementSpeed * deltaTime}");
-
-
 
         stateMachine.Controller.Move(movement * stateMachine.MovementSpeed * deltaTime);
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero) { return; }
 
-        stateMachine.transform.rotation = Quaternion.LookRotation(movement);
+       stateMachine.transform.GetChild(0).transform.rotation =  Quaternion.LookRotation(movement);
         
     }
 
