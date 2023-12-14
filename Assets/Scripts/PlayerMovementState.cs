@@ -30,7 +30,7 @@ public class PlayerMovementState : PlayerBaseState
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero) { return; }
 
-       stateMachine.transform.GetChild(0).transform.rotation =  Quaternion.LookRotation(movement);
+       stateMachine.transform.rotation =  Quaternion.LookRotation(movement);
         
     }
 
