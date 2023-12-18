@@ -10,10 +10,20 @@ public class Targeter : MonoBehaviour
     {
         Target target = other.GetComponent<Target>();
 
-        if(target != null) { return; }
+
+        if(target == null) { return; }
+
+        targets.Add(target);
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Target target = other.GetComponent<Target>();
+
+
+        if (target == null) { return; }
 
         targets.Remove(target);
-
-        Debug.Log("added");
     }
 }
