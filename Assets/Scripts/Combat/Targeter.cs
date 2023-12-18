@@ -8,22 +8,19 @@ public class Targeter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Target target = other.GetComponent<Target>();
-
-
-        if(target == null) { return; }
-
-        targets.Add(target);
+        if (!other.TryGetComponent<Target>(out Target target)) { return; }
+        {
+            targets.Add(target);
+        }
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Target target = other.GetComponent<Target>();
-
-
-        if (target == null) { return; }
-
-        targets.Remove(target);
+        if (!other.TryGetComponent<Target>(out Target target)) { return; }
+        {
+            targets.Remove(target);
+        }
     }
+
 }
