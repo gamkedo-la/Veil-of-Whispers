@@ -33,17 +33,6 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     {
         MovementValue = context.ReadValue<Vector2>();
 
-        if (context.performed)
-        {
-            animator.SetFloat("move", 1);
-        }
-
-        else
-        {
-            animator.SetFloat("move", 0);
-        }
-        Debug.Log($"OnMovement - Movement Value = {MovementValue}");
-
     }
 
     public void OnTarget(InputAction.CallbackContext context)

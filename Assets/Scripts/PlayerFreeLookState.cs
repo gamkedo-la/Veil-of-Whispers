@@ -1,16 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerMovementState : PlayerBaseState
-{ 
-    public PlayerMovementState(PlayerStateMachine stateMachine) : base(stateMachine)
+public class PlayerFreeLookState : PlayerBaseState
+{
+    public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-       
+
     }
 
-  
     public override void Enter()
     {
 
@@ -28,16 +26,21 @@ public class PlayerMovementState : PlayerBaseState
 
         stateMachine.Controller.Move(movement * stateMachine.MovementSpeed * deltaTime);
 
-        if (stateMachine.InputReader.MovementValue == Vector2.zero) { return; }
+        if (stateMachine.InputReader.MovementValue == Vector2.zero)
+        {
 
-       stateMachine.transform.rotation =  Quaternion.LookRotation(movement);
-        
+            stateMachine.animator.SetFloat("FreeLookSpeed", 0, 0.1f, deltaTime);
+            return;
+        }
+
+        stateMachine.animator.SetFloat("FreeLookSpeed", 1, 0.1f, deltaTime);
+        stateMachine.transform.rotation = Quaternion.LookRotation(movement);
     }
+
 
     public override void Exit()
     {
 
     }
-
 
 }
