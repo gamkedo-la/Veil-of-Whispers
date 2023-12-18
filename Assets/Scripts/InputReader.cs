@@ -8,6 +8,8 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 {
     public Vector2 MovementValue { get; private set; }
     public Animator animator;
+    public event Action TargetEvent;
+    public event Action CancelEvent;
     private PlayerInput playerInput;
 
 
@@ -44,5 +46,17 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
     }
 
-    
+    public void OnTarget(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        TargetEvent?.Invoke();
+    }
+
+    public void OnCancel(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        CancelEvent?.Invoke();
+    }
 }

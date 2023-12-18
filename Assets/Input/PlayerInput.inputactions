@@ -25,12 +25,21 @@
                 },
                 {
                     "name": "Target",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "cb0ce5c2-eaac-456e-96ad-a0473e9b3e21",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Key",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Cancel",
+                    "type": "Value",
+                    "id": "3ede0944-ffb0-4a83-af4a-1510d3967e28",
+                    "expectedControlType": "Key",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -103,11 +112,22 @@
                 {
                     "name": "",
                     "id": "9a7feb43-ab34-4efd-b5b6-a6019cedae1b",
-                    "path": "",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Target",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "46c1a760-c19c-4a2e-80d6-9eecb94f317f",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
