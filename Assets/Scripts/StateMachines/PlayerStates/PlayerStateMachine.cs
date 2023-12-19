@@ -11,11 +11,16 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public float MovementSpeed { get; private set; }
 
+    public Transform MainCameraTransform { get; private set; }
+
+
 
 
     void Start()
     {
+        MainCameraTransform = Camera.main.transform;
         SwitchState(new PlayerFreeLookState(this)); 
     }
+
 
 }
