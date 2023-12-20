@@ -18,13 +18,9 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         Vector3 movement = new Vector3();
 
-
-        movement.x = stateMachine.InputReader.MovementValue.x;
-        movement.y = 0;
-        movement.z = stateMachine.InputReader.MovementValue.y;
-
-
-        stateMachine.Controller.Move(movement * stateMachine.MovementSpeed * deltaTime);
+        stateMachine.transform.Rotate(Vector3.up, stateMachine.InputReader.MovementValue.x * 140.0f * deltaTime);
+        // multiplying by negative one so forward goes the expected direction
+        stateMachine.Controller.Move( -1.0f*stateMachine.InputReader.MovementValue.y * stateMachine.transform.forward * stateMachine.MovementSpeed * deltaTime);
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
         {
@@ -34,7 +30,7 @@ public class PlayerFreeLookState : PlayerBaseState
         }
 
         stateMachine.animator.SetFloat("FreeLookSpeed", 1, 0.1f, deltaTime);
-        stateMachine.transform.rotation = Quaternion.LookRotation(movement);
+        //stateMachine.transform.rotation = Quaternion.LookRotation(movement);
     }
 
 
