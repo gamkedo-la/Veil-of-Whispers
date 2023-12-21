@@ -3453,9 +3453,11 @@ MonoBehaviour:
   playerTransform: {fileID: 1150822211789303868}
   rotationSpeed: 2
   distance: 20
+  minDistance: 2
   heightOffset: 1
   maxUpwardRotation: 20
   maxDownwardRotation: 10
+  obstacleAvoidanceRadius: 1
 --- !u!1001 &952461694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8391,6 +8393,9 @@ MonoBehaviour:
   <Controller>k__BackingField: {fileID: 1150822211789303869}
   <animator>k__BackingField: {fileID: 1150822211789303873}
   <MovementSpeed>k__BackingField: 20
+  <Attacks>k__BackingField:
+  - <AnimationName>k__BackingField: PlayerPunchRight
+  - <AnimationName>k__BackingField: PlayerKickLeft
 --- !u!95 &1150822211789303873
 Animator:
   serializedVersion: 7
