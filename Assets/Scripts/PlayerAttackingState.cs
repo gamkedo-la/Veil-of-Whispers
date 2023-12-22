@@ -21,8 +21,6 @@ public class PlayerAttackingState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        
-
         float normalizedTime = GetNormalizedTime();
 
         if(normalizedTime > previousFrameTime && normalizedTime < 1f) {
@@ -31,6 +29,11 @@ public class PlayerAttackingState : PlayerBaseState
             {
                 TryComboAttack(normalizedTime);
             }
+        }
+
+        else
+        {
+            //go to locomotion
         }
 
         previousFrameTime = normalizedTime;
