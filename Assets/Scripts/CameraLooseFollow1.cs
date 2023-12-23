@@ -8,9 +8,8 @@ public class CameraLooseFollow1 : MonoBehaviour
     Camera cam;
     public Transform player;
     public  Vector3 distanceOffset;
-    public float maxOffsetDistance = 18f;
-    public float minOffsetDistance = -18f;
     public float smoothTime = 0.5f;
+    public Vector3 newCamPos;
     Vector3 camDistance;
     RaycastHit hit;
     int layerMask;
@@ -27,23 +26,22 @@ public class CameraLooseFollow1 : MonoBehaviour
     private void Update()
     {
         cam.transform.LookAt(player);
-        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity,layerMask))
-        {
-            float distanceFromHitPoint = Vector3.Distance(hit.point, player.position);
-            
-        }
 
-        else
+        bool raycastHit = Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Mathf.Infinity, layerMask);
+
+        if(raycastHit && hit.collider.gameObject != player.gameObject)
+
         {
+            cam.transform.position = Vector3.Lerp(cam.transform.position, player.transform.position , Time.deltaTime);
+            Debug.Log("hit");
         }
 
     }
 
-    
 
     private void LateUpdate()
     {
-        cam.transform.position = this.transform.position + camDistance - distanceOffset;
+       cam.transform.position = this.transform.position + camDistance - distanceOffset;      
     }
 
 }
