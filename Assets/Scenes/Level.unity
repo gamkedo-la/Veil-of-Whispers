@@ -11173,6 +11173,7 @@ GameObject:
   - component: {fileID: 6481861473530943285}
   - component: {fileID: 6481861473530943286}
   - component: {fileID: 6481861473530943287}
+  - component: {fileID: 6481861473530943288}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -11598,7 +11599,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5962732948932939144}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3e1846b77d0f68641b51bc07939d7c8f, type: 2}
   m_CullingMode: 0
@@ -11700,6 +11701,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.03
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &6481861473530943288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962732948932939144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e12480e39e8da4f8e3f3ae8d22c67d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <animator>k__BackingField: {fileID: 6481861473530943283}
 --- !u!1 &6482467504332768301
 GameObject:
   m_ObjectHideFlags: 0
