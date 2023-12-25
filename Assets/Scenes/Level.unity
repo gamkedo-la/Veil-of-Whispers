@@ -8532,7 +8532,7 @@ Transform:
   m_GameObject: {fileID: 338713459730737798}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.33, y: 240.26, z: -194.35}
+  m_LocalPosition: {x: 122.22, y: 240.26, z: -194.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8570,7 +8570,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: -0.08, y: 5.3, z: -3.23}
+  m_Center: {x: 0.44, y: -1.14, z: 0.53}
 --- !u!114 &1150822211789303871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8643,9 +8643,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2.5607677
-  m_Height: 12.742027
+  m_Height: 11.969315
   m_Direction: 1
-  m_Center: {x: 0.49118853, y: -2.1679382, z: 0.4264984}
+  m_Center: {x: 0.49118853, y: -1.1706161, z: 0.4264984}
 --- !u!4 &1211789293385372483
 Transform:
   m_ObjectHideFlags: 0
@@ -11866,13 +11866,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.3
+  m_Height: 10
+  m_Radius: 1.8
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.03
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0.03, y: -0.55, z: 0.02}
 --- !u!114 &6481861473530943288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11888,7 +11888,7 @@ MonoBehaviour:
   <animator>k__BackingField: {fileID: 6481861473530943283}
   <Controller>k__BackingField: {fileID: 6481861473530943287}
   <ForceReceiver>k__BackingField: {fileID: 6481861473530943289}
-  <MovementSpeed>k__BackingField: 5
+  <MovementSpeed>k__BackingField: 25
   <Agent>k__BackingField: {fileID: 6481861473530943290}
   <playerChasingRange>k__BackingField: 10
 --- !u!114 &6481861473530943289
