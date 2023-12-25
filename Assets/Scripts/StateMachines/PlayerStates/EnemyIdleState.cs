@@ -25,6 +25,12 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        Move(deltaTime);
+        if (IsInChaseRange())
+        {
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+            return;
+        }
         stateMachine.animator.SetFloat(MoveHash, 0f, AnimatorDampTime, deltaTime);
     }
 
@@ -32,4 +38,6 @@ public class EnemyIdleState : EnemyBaseState
     {
 
     }
+
+    private void MoveToPlayer(float deltaTime) { }
 }
