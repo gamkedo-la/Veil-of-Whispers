@@ -8,11 +8,13 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 {
     public Vector2 MovementValue { get; private set; }
     public Vector2 LookValue { get; private set; }
-    public bool canJump { get; private set; }
+    public bool CanJump { get; private set; }
     public bool isAttacking { get; private set; }
     public Animator animator;
     public event Action TargetEvent;
     public event Action CancelEvent;
+    public event Action JumpEvent;
+
     private PlayerInput playerInput;
 
 
@@ -39,7 +41,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        canJump = context.performed;  
+        CanJump = context.performed;  
     }
 
     public void OnTarget(InputAction.CallbackContext context)

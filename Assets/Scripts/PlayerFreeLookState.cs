@@ -25,10 +25,7 @@ public class PlayerFreeLookState : PlayerBaseState
 
         stateMachine.transform.Rotate(Vector3.up, stateMachine.InputReader.MovementValue.x * 140.0f * deltaTime);
 
-        if ( stateMachine.InputReader.canJump )
-        {
-            Debug.Log("JUMP!");
-        }
+    
 
         // multiplying by negative one so forward goes the expected direction
         stateMachine.Controller.Move( -1.0f*stateMachine.InputReader.MovementValue.y * stateMachine.transform.forward * stateMachine.MovementSpeed * deltaTime);
