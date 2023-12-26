@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerFallState : PlayerBaseState
 {
-    private readonly int FallHash = Animator.StringToHash("Jump");
-
+    private readonly int FallHash = Animator.StringToHash("PlayerFall");
     private const float CrossFadeDuration = 0.1f;
+    private Vector3 momentum;
+
     public PlayerFallState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
 
@@ -14,6 +15,8 @@ public class PlayerFallState : PlayerBaseState
 
     public override void Enter()
     {
+        momentum = stateMachine.Controller.velocity;
+        momentum.y = 0f;
         stateMachine.animator.CrossFadeInFixedTime(FallHash, CrossFadeDuration);
     }
 
@@ -24,6 +27,6 @@ public class PlayerFallState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-
+        Move(momentum,deltaTime);
     }
 }

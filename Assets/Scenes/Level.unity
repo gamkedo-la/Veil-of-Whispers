@@ -8106,6 +8106,7 @@ GameObject:
   - component: {fileID: 1150822211789303869}
   - component: {fileID: 1150822211789303873}
   - component: {fileID: 1150822211789303874}
+  - component: {fileID: 1150822211789303875}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -8598,10 +8599,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <InputReader>k__BackingField: {fileID: 1150822211789303871}
   <Controller>k__BackingField: {fileID: 1150822211789303869}
-  <ForceReceiver>k__BackingField: {fileID: 0}
+  <ForceReceiver>k__BackingField: {fileID: 1150822211789303875}
   <animator>k__BackingField: {fileID: 1150822211789303873}
   <MovementSpeed>k__BackingField: 20
-  <JumpForce>k__BackingField: 4
+  <JumpForce>k__BackingField: 5
   <Attacks>k__BackingField: []
 --- !u!95 &1150822211789303873
 Animator:
@@ -8648,6 +8649,19 @@ CapsuleCollider:
   m_Height: 11.969315
   m_Direction: 1
   m_Center: {x: 0.49118853, y: -1.1706161, z: 0.4264984}
+--- !u!114 &1150822211789303875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338713459730737798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc815fe0b5d93f94aa0173faa778f42b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 1150822211789303869}
 --- !u!4 &1211789293385372483
 Transform:
   m_ObjectHideFlags: 0
