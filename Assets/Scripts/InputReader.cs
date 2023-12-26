@@ -8,7 +8,6 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 {
     public Vector2 MovementValue { get; private set; }
     public Vector2 LookValue { get; private set; }
-    public bool CanJump { get; private set; }
     public bool isAttacking { get; private set; }
     public Animator animator;
     public event Action TargetEvent;
@@ -27,7 +26,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     }
     private void OnDestroy()
     {
-       playerInput.Player.Enable();
+       playerInput.Player.Disable();
     }
     public void OnLook(InputAction.CallbackContext context)
     {
@@ -39,10 +38,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
         MovementValue = context.ReadValue<Vector2>();
     }
 
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        CanJump = context.performed;  
-    }
+  
 
     public void OnTarget(InputAction.CallbackContext context)
     {
@@ -66,6 +62,14 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
         {
             isAttacking = false;
         }
+
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        JumpEvent?.Invoke();
 
     }
 }

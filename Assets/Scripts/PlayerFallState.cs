@@ -9,6 +9,7 @@ public class PlayerFallState : PlayerBaseState
     private const float CrossFadeDuration = 0.1f;
     public PlayerFallState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
+
     }
 
     public override void Enter()

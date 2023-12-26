@@ -115,7 +115,7 @@ BlendTree:
   m_Name: FreeLookBlend
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: a4b53017809fac84288fe22095b50425, type: 2}
+    m_Motion: {fileID: 7400000, guid: 23c1470c4b908d745a74603e36a41d27, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1

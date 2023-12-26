@@ -33,7 +33,6 @@ public class CameraLooseFollow1 : MonoBehaviour
 
         {
             cam.transform.position = Vector3.Lerp(cam.transform.position, player.transform.position , Time.deltaTime);
-            Debug.Log("hit");
         }
 
     }
