@@ -6,8 +6,8 @@ using UnityEngine.Scripting.APIUpdating;
 public class PlayerJumpState : PlayerBaseState
 {
     private readonly int JumpHash = Animator.StringToHash("PlayerJump");
-
     private Vector3 momentum;
+    
 
     private const float CrossFadeDuration = 0.1f;
     public PlayerJumpState(PlayerStateMachine stateMachine) : base(stateMachine)
@@ -27,7 +27,7 @@ public class PlayerJumpState : PlayerBaseState
     {
         Move(momentum, deltaTime);
 
-       if(stateMachine.Controller.velocity.y < 0f)
+       if(stateMachine.Controller.velocity.y <= 0f)
        {
           stateMachine.SwitchState(new PlayerFallState(stateMachine));
           return;
