@@ -9,8 +9,14 @@ public class CameraLooseFollow1 : MonoBehaviour
     public Transform player;
     RaycastHit hit;
     int layerMask;
+    public float camBehind = 25f;
+    public float camAbove = 5f;
+    public float camLookAhead = 30f;
+    public Vector3 rightDistance;
+    public Vector3 leftDistance;
 
-    
+
+
     private void Start()
     {
         cam = Camera.main;
@@ -18,17 +24,9 @@ public class CameraLooseFollow1 : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-       
-    }
-
-
     private void LateUpdate()
     {
-        float camBehind = 25f;
-        float camAbove = 5f;
-        float camLookAhead = 30f;
+       
         Vector3 camOffset = -player.transform.forward * camBehind + Vector3.up * camAbove;
         cam.transform.position = player.transform.position + camOffset;
         Vector3 playerToCam = cam.transform.position - player.transform.position;
@@ -36,11 +34,15 @@ public class CameraLooseFollow1 : MonoBehaviour
         cam.transform.LookAt(player.transform.position + player.transform.forward * camLookAhead);
 
 
-        if (raycastHit)
+        if (raycastHit && cam.gameObject.transform.rotation.y > 100)
 
         {
-            //Debug.Log(hit.collider.gameObject.name);
-            cam.transform.position = hit.point + cam.transform.forward * 0.5f;// Vector3.Lerp(cam.transform.position, player.transform.position , Time.deltaTime);
+            cam.transform.position = hit.point + rightDistance * 0.5f;
+        }
+
+        if(raycastHit && cam.gameObject.transform.rotation.y < 100)
+        {
+            cam.transform.position = hit.point + leftDistance * 0.5f;
         }
 
 
