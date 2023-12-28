@@ -20,8 +20,7 @@ public class CameraLooseFollow1 : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
-        layerMask = ~LayerMask.GetMask(LayerMask.LayerToName(player.gameObject.layer));
-
+        layerMask = ~LayerMask.GetMask("Player", "Enemy");
     }
 
     private void LateUpdate()
