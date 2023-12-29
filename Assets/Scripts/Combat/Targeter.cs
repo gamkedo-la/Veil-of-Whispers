@@ -5,6 +5,9 @@ using UnityEngine;
 public class Targeter : MonoBehaviour
 {
     public List<Target> targets = new List<Target>();
+    public Target CurrentTarget { get; private set; }
+
+
 
     private void OnTriggerEnter(Collider other)
     {

@@ -32,7 +32,9 @@ public class EnemyChasingState : EnemyBaseState
             return;
         }
 
-        else if(!IsInAttackRange()) {
+        if(IsInAttackRange()) {
+
+            Debug.Log("Switching to Attacking State");
 
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
             return;
@@ -41,6 +43,8 @@ public class EnemyChasingState : EnemyBaseState
         MoveToPlayer(deltaTime);
         FacePlayer();
         stateMachine.animator.SetFloat(MoveHash, 1f, AnimatorDampTime, deltaTime);
+
+
     }
 
     public override void Exit()

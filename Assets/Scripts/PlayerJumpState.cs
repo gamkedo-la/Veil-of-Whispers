@@ -9,7 +9,7 @@ public class PlayerJumpState : PlayerBaseState
     private Vector3 momentum;
     
 
-    private const float CrossFadeDuration = 0.1f;
+    private const float CrossFadeDuration = 1f;
     public PlayerJumpState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
 

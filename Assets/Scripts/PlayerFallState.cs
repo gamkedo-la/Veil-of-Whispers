@@ -20,13 +20,19 @@ public class PlayerFallState : PlayerBaseState
         stateMachine.animator.CrossFadeInFixedTime(FallHash, CrossFadeDuration);
     }
 
+    public override void Tick(float deltaTime)
+    {
+        Move(momentum, deltaTime);
+
+        if (stateMachine.Controller.isGrounded)
+        {
+            ReturnToLocomotion();
+        }
+    }
     public override void Exit()
     {
 
     }
 
-    public override void Tick(float deltaTime)
-    {
-        Move(momentum,deltaTime);
-    }
+    
 }
