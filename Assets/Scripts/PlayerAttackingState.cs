@@ -21,7 +21,7 @@ public class PlayerAttackingState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        float normalizedTime = GetNormalizedTime();
+        float normalizedTime = GetNormalizedTime(stateMachine.animator);
 
         if(normalizedTime > previousFrameTime && normalizedTime < 1f) {
 
@@ -62,31 +62,7 @@ public class PlayerAttackingState : PlayerBaseState
     {
 
     }
-
    
-
-    private float GetNormalizedTime()
-    {
-       AnimatorStateInfo currentInfo = stateMachine.animator.GetCurrentAnimatorStateInfo(0);
-       AnimatorStateInfo nextInfo    = stateMachine.animator.GetCurrentAnimatorStateInfo(0);
-
-        if(stateMachine.animator.IsInTransition(0) && nextInfo.IsTag("Attack"))
-        {
-            return nextInfo.normalizedTime;
-        }
-
-        else if(stateMachine.animator.IsInTransition(0) && nextInfo.IsTag("Attack"))
-        {
-            return currentInfo.normalizedTime;
-        }
-
-        else
-        {
-            return 0;
-        }
-
-    }
-
 }
 
 
