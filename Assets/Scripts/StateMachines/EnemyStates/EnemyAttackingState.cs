@@ -17,13 +17,21 @@ public class EnemyAttackingState : EnemyBaseState
         stateMachine.animator.CrossFadeInFixedTime(AttackHash, TransitionDuration);
     }
 
+    public override void Tick(float deltaTime)
+    {
+        if (GetNormalizedTime(stateMachine.animator, "EnemyAttack") >= 1)
+        {
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+        }
+
+        FacePlayer();
+
+    }
+
     public override void Exit()
     {
 
     }
 
-    public override void Tick(float deltaTime)
-    {
-
-    }
+   
 }

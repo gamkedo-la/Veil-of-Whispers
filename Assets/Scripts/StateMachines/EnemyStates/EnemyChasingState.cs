@@ -13,10 +13,7 @@ public class EnemyChasingState : EnemyBaseState
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
 
-    public EnemyChasingState(EnemyStateMachine stateMachine) : base(stateMachine)
-    {
-
-    }
+    public EnemyChasingState(EnemyStateMachine stateMachine) : base(stateMachine) {  }
 
     public override void Enter()
     {
@@ -25,7 +22,6 @@ public class EnemyChasingState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
-        Move(deltaTime);
         if (!IsInChaseRange())
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
@@ -33,16 +29,13 @@ public class EnemyChasingState : EnemyBaseState
         }
 
         if(IsInAttackRange()) {
-
-            Debug.Log("Switching to Attacking State");
-
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
             return;
         }
 
         MoveToPlayer(deltaTime);
         FacePlayer();
-        stateMachine.animator.SetFloat(MoveHash, 1f, AnimatorDampTime, deltaTime);
+        stateMachine.animator.SetFloat(MoveHash, 0f, AnimatorDampTime, deltaTime);
 
 
     }

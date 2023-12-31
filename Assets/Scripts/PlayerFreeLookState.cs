@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class PlayerFreeLookState : PlayerBaseState
 {
+    private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
+    private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
+    private const float AnimatorDampTime = 0.1f;
+    private const float CrossFadeDuration = 0.1f;
+
+
+
+
+
+
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
 
@@ -12,6 +22,10 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.InputReader.JumpEvent += OnJump;
+
+        stateMachine.animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
+
+
     }
 
     public override void Tick(float deltaTime)
@@ -23,22 +37,24 @@ public class PlayerFreeLookState : PlayerBaseState
         }
         Vector3 movement = new Vector3();
 
+        Move(movement * stateMachine.MovementSpeed, deltaTime);
+
+
+
         stateMachine.transform.Rotate(Vector3.up, stateMachine.InputReader.MovementValue.x * 140.0f * deltaTime);
 
     
 
-        // multiplying by negative one so forward goes the expected direction
         stateMachine.Controller.Move( -1.0f*stateMachine.InputReader.MovementValue.y * stateMachine.transform.forward * stateMachine.MovementSpeed * deltaTime);
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
         {
 
-            stateMachine.animator.SetFloat("FreeLookSpeed", 0, 0.1f, deltaTime);
+            stateMachine.animator.SetFloat("FreeLookSpeed", 0, AnimatorDampTime, deltaTime);
             return;
         }
 
-        stateMachine.animator.SetFloat("FreeLookSpeed", 1, 0.1f, deltaTime);
-        //stateMachine.transform.rotation = Quaternion.LookRotation(movement);
+        stateMachine.animator.SetFloat("FreeLookSpeed", 1, AnimatorDampTime, deltaTime);
     }
 
     private void OnJump()

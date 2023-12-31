@@ -24,10 +24,8 @@ public abstract class PlayerBaseState : State
 
     protected void ReturnToLocomotion()
     {
-       
-            stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
-        
-        
+      stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+        Debug.Log("swithc");
     }
 
 
