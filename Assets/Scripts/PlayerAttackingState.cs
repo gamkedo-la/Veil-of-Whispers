@@ -21,7 +21,7 @@ public class PlayerAttackingState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-        float normalizedTime = GetNormalizedTime(stateMachine.animator);
+        float normalizedTime = GetNormalizedTime(stateMachine.animator, "Attack");
 
         if(normalizedTime > previousFrameTime && normalizedTime < 1f) {
 

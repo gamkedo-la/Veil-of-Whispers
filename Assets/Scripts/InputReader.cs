@@ -9,10 +9,15 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     public Vector2 MovementValue { get; private set; }
     public Vector2 LookValue { get; private set; }
     public bool isAttacking { get; private set; }
+   // public bool isCrouch { get; private set; }
+
     public Animator animator;
     public event Action TargetEvent;
     public event Action CancelEvent;
     public event Action JumpEvent;
+    public event Action CrouchEvent;
+
+
 
     private PlayerInput playerInput;
 
@@ -71,5 +76,12 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
         JumpEvent?.Invoke();
 
+    }
+
+    public void OnCrouch(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        CrouchEvent?.Invoke();
     }
 }

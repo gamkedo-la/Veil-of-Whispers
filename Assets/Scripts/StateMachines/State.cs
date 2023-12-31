@@ -10,17 +10,17 @@ public abstract class State
 
     public abstract void Exit();
 
-    protected float GetNormalizedTime(Animator animator, string stateName = "Attack")
+    protected float GetNormalizedTime(Animator animator, string tag)
     {
        AnimatorStateInfo currentInfo = animator.GetCurrentAnimatorStateInfo(0);
        AnimatorStateInfo nextInfo    = animator.GetCurrentAnimatorStateInfo(0);
 
-        if(animator.IsInTransition(0) && nextInfo.IsTag(stateName))
+        if(animator.IsInTransition(0) && nextInfo.IsTag(tag))
         {
             return nextInfo.normalizedTime;
         }
 
-        else if(animator.IsInTransition(0) && nextInfo.IsTag(stateName))
+        else if(animator.IsInTransition(0) && nextInfo.IsTag(tag))
         {
             return currentInfo.normalizedTime;
         }
