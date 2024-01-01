@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCrouchState : PlayerBaseState
 {
-    private readonly int JumpHash = Animator.StringToHash("PlayerJump");
+    private readonly int CrouchHash = Animator.StringToHash("PlayerCrouch");
     private const float CrossFadeDuration = 1f;
     public PlayerCrouchState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
@@ -12,7 +12,12 @@ public class PlayerCrouchState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
+        stateMachine.animator.CrossFadeInFixedTime(CrouchHash, CrossFadeDuration);
+    }
+
+    public override void Tick(float deltaTime)
+    {
+
     }
 
     public override void Exit()
@@ -20,8 +25,5 @@ public class PlayerCrouchState : PlayerBaseState
 
     }
 
-    public override void Tick(float deltaTime)
-    {
-
-    }
+ 
 }

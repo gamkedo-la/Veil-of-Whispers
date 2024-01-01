@@ -23,20 +23,25 @@ public class PlayerAttackingState : PlayerBaseState
     {
         float normalizedTime = GetNormalizedTime(stateMachine.animator, "Attack");
 
-        if(normalizedTime > previousFrameTime && normalizedTime < 1f) {
 
-            if(stateMachine.InputReader.isAttacking)
+        if (normalizedTime >= previousFrameTime && normalizedTime < 1f)
+        {
+           
+
+            if (stateMachine.InputReader.isAttacking)
             {
                 TryComboAttack(normalizedTime);
             }
         }
-
         else
         {
-            //go to locomotion
+            
+                stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            
         }
 
         previousFrameTime = normalizedTime;
+
     }
 
     private void TryComboAttack(float normalizedTime)
@@ -56,7 +61,10 @@ public class PlayerAttackingState : PlayerBaseState
         
         );
     }
-      
+
+    
+
+
 
     public override void Exit()
     {
