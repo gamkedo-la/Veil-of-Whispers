@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI
@@ -8,15 +9,15 @@ namespace UI
         [SerializeField]
         private Button PlayButton;
         [SerializeField]
-        private Button QuitButton;
-        [SerializeField]
         private Button SettingsButton;
+        [SerializeField]
+        private Button QuitButton;
 
         private void Start()
         {
             PlayButton.onClick.AddListener(() =>
             {
-                Debug.Log("Play Button");
+                SceneManager.LoadScene("Scenes/Level");
             });
             SettingsButton.onClick.AddListener(() =>
             {
@@ -24,7 +25,11 @@ namespace UI
             });
             QuitButton.onClick.AddListener(() =>
             {
+                #if UNITY_EDITOR
                 Debug.Log("Quit Button");
+                #else
+                Application.Quit();
+                #endif
             });
         }
     }
