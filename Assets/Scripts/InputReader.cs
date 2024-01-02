@@ -9,13 +9,12 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     public Vector2 MovementValue { get; private set; }
     public Vector2 LookValue { get; private set; }
     public bool isAttacking { get; private set; }
-   // public bool isCrouch { get; private set; }
+    public bool isCrouch { get; private set; }
 
     public Animator animator;
     public event Action TargetEvent;
     public event Action CancelEvent;
     public event Action JumpEvent;
-    public event Action CrouchEvent;
 
 
 
@@ -28,6 +27,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
        playerInput = new PlayerInput();
        playerInput.Player.SetCallbacks(this);
        playerInput.Player.Enable();
+       isCrouch = false;    
     }
     private void OnDestroy()
     {
@@ -80,8 +80,14 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
     public void OnCrouch(InputAction.CallbackContext context)
     {
-        if (!context.performed) { return; }
+        if (!context.performed) { isCrouch = true; Debug.Log(context);
+        }
 
-        CrouchEvent?.Invoke();
+        else if (context.canceled)
+        {
+            isCrouch = false;
+            Debug.Log(context);
+        }
+
     }
 }

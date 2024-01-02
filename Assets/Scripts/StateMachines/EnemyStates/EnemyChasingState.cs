@@ -35,7 +35,7 @@ public class EnemyChasingState : EnemyBaseState
 
         MoveToPlayer(deltaTime);
         FacePlayer();
-        stateMachine.animator.SetFloat(MoveHash, 0f, AnimatorDampTime, deltaTime);
+        stateMachine.animator.SetFloat(MoveHash, 1f, AnimatorDampTime, deltaTime);
 
 
     }

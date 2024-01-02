@@ -23,6 +23,9 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         stateMachine.InputReader.JumpEvent += OnJump;
 
+
+        stateMachine.animator.SetFloat(FreeLookSpeedHash, 0f);
+
         stateMachine.animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, CrossFadeDuration);
 
 
@@ -35,6 +38,15 @@ public class PlayerFreeLookState : PlayerBaseState
         {
             stateMachine.SwitchState(new PlayerAttackingState(stateMachine,1));
         }
+
+        if(stateMachine.InputReader.isCrouch == true)
+        {
+            stateMachine.SwitchState(new PlayerCrouchState(stateMachine));
+        }
+
+
+
+
         Vector3 movement = new Vector3();
 
         Move(movement * stateMachine.MovementSpeed, deltaTime);
@@ -59,7 +71,7 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void OnJump()
     {
-        stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+        stateMachine.SwitchState(new PlayerJumpState(stateMachine, 0.5f));
     }
 
 

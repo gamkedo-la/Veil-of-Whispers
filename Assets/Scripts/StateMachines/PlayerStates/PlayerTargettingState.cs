@@ -11,7 +11,7 @@ public class PlayerTargettingState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.InputReader.JumpEvent += OnJump;
+        //stateMachine.InputReader.JumpEvent += OnJump;
     }
 
     public override void Tick(float deltaTime)
@@ -25,12 +25,12 @@ public class PlayerTargettingState : PlayerBaseState
 
     private void OnJump()
     {
-        stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+       // stateMachine.SwitchState(new PlayerJumpState(stateMachine,3));
     }
 
     public override void Exit()
     {
-        stateMachine.InputReader.JumpEvent -= OnJump;
+       // stateMachine.InputReader.JumpEvent -= OnJump;
     }
 
 }

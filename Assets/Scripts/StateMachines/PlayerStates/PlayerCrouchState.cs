@@ -8,6 +8,7 @@ public class PlayerCrouchState : PlayerBaseState
     private const float CrossFadeDuration = 1f;
     public PlayerCrouchState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
+
     }
 
     public override void Enter()
@@ -17,9 +18,12 @@ public class PlayerCrouchState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-
+        if(!stateMachine.InputReader.isCrouch)
+        {
+           stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+       }
     }
-
+    
     public override void Exit()
     {
 
