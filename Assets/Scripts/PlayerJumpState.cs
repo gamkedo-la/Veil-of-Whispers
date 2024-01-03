@@ -7,15 +7,13 @@ public class PlayerJumpState : PlayerBaseState
 {
     private readonly int JumpHash = Animator.StringToHash("PlayerJump");
     private Vector3 momentum;
-    private float jumpAnimationDuration;
-    private float startTime;
+  
 
 
 
     private const float CrossFadeDuration = 1f;
-    public PlayerJumpState(PlayerStateMachine stateMachine, float jumpAnimationDuration) : base(stateMachine)
+    public PlayerJumpState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-        this.jumpAnimationDuration = jumpAnimationDuration;
 
     }
 
@@ -24,15 +22,14 @@ public class PlayerJumpState : PlayerBaseState
         stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
         stateMachine.animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
         momentum = stateMachine.Controller.velocity;
-        momentum.y = 0f;
-        startTime = Time.time;  // Record the start time
+
     }
 
     public override void Tick(float deltaTime)
     {
         Move(momentum, deltaTime);
 
-       if(stateMachine.Controller.velocity.y <= 0f && Time.time - startTime >= jumpAnimationDuration)
+       if(stateMachine.Controller.velocity.y <= 0f)
        {
           stateMachine.SwitchState(new PlayerFallState(stateMachine));
           return;

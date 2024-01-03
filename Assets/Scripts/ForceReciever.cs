@@ -13,14 +13,17 @@ public class ForceReciever : MonoBehaviour
     {
         if (verticalVelocity < 0f && Controller.isGrounded)
         {
-            verticalVelocity = Physics.gravity.y * Time.deltaTime;
+            verticalVelocity = 0f;
 
         }
 
         else
         {
-            verticalVelocity += Physics.gravity.y + Time.deltaTime;
+            verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
+
+          
+        
     }
 
     public void Jump(float jumpForce)

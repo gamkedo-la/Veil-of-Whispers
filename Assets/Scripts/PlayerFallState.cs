@@ -27,7 +27,6 @@ public class PlayerFallState : PlayerBaseState
         if (stateMachine.Controller.isGrounded)
         {
             ReturnToLocomotion();
-            Debug.Log("Locomotiom");
         }
     }
     public override void Exit()
