@@ -12114,7 +12114,7 @@ MonoBehaviour:
   <ForceReceiver>k__BackingField: {fileID: 6481861473530943289}
   <MovementSpeed>k__BackingField: 30
   <Agent>k__BackingField: {fileID: 6481861473530943290}
-  <playerChasingRange>k__BackingField: 3750
+  <playerChasingRange>k__BackingField: 40
   <AttackRange>k__BackingField: 7
 --- !u!114 &6481861473530943289
 MonoBehaviour:
