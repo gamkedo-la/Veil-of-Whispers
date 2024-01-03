@@ -80,10 +80,13 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
     public void OnCrouch(InputAction.CallbackContext context)
     {
-        if (!context.performed) { isCrouch = true; Debug.Log(context);
+        if (context.performed) { 
+
+            isCrouch = true;
+            Debug.Log(context);
         }
 
-        else if (context.canceled)
+        if (context.canceled)
         {
             isCrouch = false;
             Debug.Log(context);
