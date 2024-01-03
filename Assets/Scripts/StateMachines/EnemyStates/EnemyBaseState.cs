@@ -34,8 +34,6 @@ public abstract class EnemyBaseState : State
     protected bool IsInChaseRange()
     {
        float playerDistance =  (stateMachine.Player.transform.position - stateMachine.transform.position).magnitude;
-        Debug.Log(playerDistance);
-
        return playerDistance <= stateMachine.playerChasingRange;
 
     }
