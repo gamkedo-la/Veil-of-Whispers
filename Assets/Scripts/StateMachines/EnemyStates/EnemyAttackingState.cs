@@ -19,7 +19,13 @@ public class EnemyAttackingState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
-        
+        if (!IsInAttackRange())
+        {
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+            return;
+        }
+
+
         FacePlayer();
 
     }
@@ -28,5 +34,12 @@ public class EnemyAttackingState : EnemyBaseState
     {
 
     }
-   
+
+
+    private bool IsInAttackRange()
+    {
+        float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
+        return playerDistanceSqr <= stateMachine.AttackRange * stateMachine.AttackRange;
+    }
+
 }
