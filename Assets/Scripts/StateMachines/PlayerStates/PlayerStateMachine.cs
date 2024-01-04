@@ -11,6 +11,9 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public Targeter Targeter { get; private set; }
 
+    [field: SerializeField] public LedgeDetector ledgeDetector { get; private set; }
+
+
 
     [field: SerializeField] public float MovementSpeed { get; private set; }
 
