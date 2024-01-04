@@ -118,4 +118,24 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
             }
         }
     }
+
+    public void OnRightPunch(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnLeftPunch(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnRightKick(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnLeftKick(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
+    }
 }
