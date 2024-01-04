@@ -57,7 +57,7 @@ public class PlayerFreeLookState : PlayerBaseState
 
     
 
-        stateMachine.Controller.Move( -1.0f*stateMachine.InputReader.MovementValue.y * stateMachine.transform.forward * stateMachine.MovementSpeed * deltaTime);
+        stateMachine.Controller.Move( stateMachine.InputReader.MovementValue.y * stateMachine.transform.forward * stateMachine.MovementSpeed * deltaTime);
 
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
         {
