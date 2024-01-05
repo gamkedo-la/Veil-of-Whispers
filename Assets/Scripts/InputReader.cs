@@ -42,6 +42,10 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     public void OnMovement(InputAction.CallbackContext context)
     {
         MovementValue = context.ReadValue<Vector2>();
+        //if(MovementValue != Vector2.zero)
+        //{
+        //    AudioManager.Instance.Play("Footstep");
+        //}
     }
 
   
