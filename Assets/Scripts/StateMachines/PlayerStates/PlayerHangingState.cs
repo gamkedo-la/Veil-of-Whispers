@@ -40,7 +40,7 @@ public class PlayerHangingState : PlayerBaseState
 
     private void HandleLedgeDetect(Vector3 closestPoint, Vector3 ledgeForward)
     {
-
+        stateMachine.SwitchState(new PlayerHangingState(stateMachine, closestPoint, ledgeForward));
     }
 
 }
