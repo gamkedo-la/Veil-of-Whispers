@@ -8,7 +8,11 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 {
     public Vector2 MovementValue { get; private set; }
     public Vector2 LookValue { get; private set; }
-    public bool isAttacking { get; private set; }
+    public bool isPunchR { get; private set; }
+    public bool isPunchL { get; private set; }
+    public bool isKickR { get; private set; }
+    public bool isKickL { get; private set; }
+
     public bool isCrouch { get; private set; }
     public bool isGamePaused { get; private set; }
 
@@ -64,17 +68,6 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
         CancelEvent?.Invoke();
     }
 
-    public void OnAttack(InputAction.CallbackContext context)
-    {
-        if(context.performed) { isAttacking = true; }
-
-        else if(context.canceled)
-        {
-            isAttacking = false;
-        }
-
-    }
-
     public void OnJump(InputAction.CallbackContext context)
     {
         if (!context.performed) { return; }
@@ -125,21 +118,45 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
     public void OnRightPunch(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.performed) { isPunchR = true; }
+
+        else if (context.canceled)
+        {
+            isPunchR = false;
+        }
     }
 
     public void OnLeftPunch(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.performed) { isPunchL = true; }
+
+        else if (context.canceled)
+        {
+            isPunchL = false;
+        }
     }
 
     public void OnRightKick(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.performed) {
+
+            isKickR = true; }
+
+        else if (context.canceled)
+        {
+            isKickR = false;
+        }
     }
 
     public void OnLeftKick(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+        if (context.performed) { isKickL = true; }
+
+        else if (context.canceled)
+        {
+            isKickL = false;
+        }
     }
+
+ 
 }

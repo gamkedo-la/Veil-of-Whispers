@@ -34,12 +34,27 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
 
-        if (stateMachine.InputReader.isAttacking)
+        if (stateMachine.InputReader.isPunchR)
         {
-            stateMachine.SwitchState(new PlayerAttackingState(stateMachine,1));
+            stateMachine.SwitchState(new PlayerRPunchState(stateMachine));
         }
 
-        if(stateMachine.InputReader.isCrouch == true)
+        if (stateMachine.InputReader.isPunchL)
+        {
+            stateMachine.SwitchState(new PlayerLPunchState(stateMachine));
+        }
+
+        if (stateMachine.InputReader.isKickR)
+        {
+            stateMachine.SwitchState(new PlayerRKickState(stateMachine));
+        }
+
+        if (stateMachine.InputReader.isKickL)
+        {
+            stateMachine.SwitchState(new PlayerLKickState(stateMachine));
+        }
+
+        if (stateMachine.InputReader.isCrouch == true)
         {
             stateMachine.SwitchState(new PlayerCrouchState(stateMachine));
         }
