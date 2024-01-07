@@ -6,6 +6,7 @@ public class PlayerLPunchState : PlayerBaseState
 {
     private readonly int PlayerPunchHash = Animator.StringToHash("PlayerPunchLeft");
     private const float CrossFadeDuration = 1f;
+    float normalizedTime;
     public PlayerLPunchState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
         stateMachine.animator.CrossFadeInFixedTime(PlayerPunchHash, CrossFadeDuration);
@@ -18,8 +19,10 @@ public class PlayerLPunchState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
+        normalizedTime = GetNormalizedTime(stateMachine.animator, "PlayerPunchLeft");
 
-        if (!stateMachine.InputReader.isPunchL)
+
+        if (normalizedTime >= 1f)
         {
             stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
         }

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerLKickState : PlayerBaseState
 {
-    private readonly int PlayerKickHash = Animator.StringToHash("PlayerKickRight");
+    private readonly int PlayerKickLHash = Animator.StringToHash("PlayerKickLeft");
     private const float CrossFadeDuration = 1f;
+    float normalizedTime;
     public PlayerLKickState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-        stateMachine.animator.CrossFadeInFixedTime(PlayerKickHash, CrossFadeDuration);
+        stateMachine.animator.CrossFadeInFixedTime(PlayerKickLHash, CrossFadeDuration);
     }
 
     public override void Enter()
@@ -19,7 +20,10 @@ public class PlayerLKickState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
 
-        if (!stateMachine.InputReader.isKickL)
+        normalizedTime = GetNormalizedTime(stateMachine.animator, "PlayerKickLeft");
+
+
+        if (normalizedTime >= 1f)
         {
             stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
         }

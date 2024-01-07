@@ -8,10 +8,10 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 {
     public Vector2 MovementValue { get; private set; }
     public Vector2 LookValue { get; private set; }
-    public bool isPunchR { get; private set; }
-    public bool isPunchL { get; private set; }
-    public bool isKickR { get; private set; }
-    public bool isKickL { get; private set; }
+    public bool isPunchR { get;  set; }
+    public bool isPunchL { get;  set; }
+    public bool isKickR { get;  set; }
+    public bool isKickL { get;  set; }
 
     public bool isCrouch { get; private set; }
     public bool isGamePaused { get; private set; }
@@ -118,22 +118,22 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
     public void OnRightPunch(InputAction.CallbackContext context)
     {
-        if (context.performed) { isPunchR = true; }
-
-        else if (context.canceled)
+        if (context.performed)
         {
-            isPunchR = false;
+            isPunchR = true;
         }
+
     }
 
     public void OnLeftPunch(InputAction.CallbackContext context)
     {
-        if (context.performed) { isPunchL = true; }
 
-        else if (context.canceled)
-        {
-            isPunchL = false;
-        }
+        
+        if (context.performed) {
+            
+            isPunchL = true; }
+
+   
     }
 
     public void OnRightKick(InputAction.CallbackContext context)
@@ -142,20 +142,14 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
             isKickR = true; }
 
-        else if (context.canceled)
-        {
-            isKickR = false;
-        }
+      
     }
 
     public void OnLeftKick(InputAction.CallbackContext context)
     {
         if (context.performed) { isKickL = true; }
 
-        else if (context.canceled)
-        {
-            isKickL = false;
-        }
+      
     }
 
  
