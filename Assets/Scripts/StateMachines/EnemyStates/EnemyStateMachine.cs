@@ -16,6 +16,7 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public NavMeshAgent Agent { get; private set; }
 
+    [field: SerializeField] public Health Health { get; private set; }
 
     [field: SerializeField] public float playerChasingRange { get; private set; }
 
@@ -38,5 +39,20 @@ public class EnemyStateMachine : StateMachine
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerChasingRange);
+    }
+
+    private void OnEnable()
+    {
+        Health.OnTakeDamage += HandleTakeDamage;
+    }
+
+    private void OnDisable()
+    {
+        Health.OnTakeDamage -= HandleTakeDamage;
+    }
+
+    private void HandleTakeDamage()
+    {
+        SwitchState(new EnemyImpactState(this));
     }
 }
