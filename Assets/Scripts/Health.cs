@@ -30,10 +30,9 @@ public class Health : MonoBehaviour
 
         if(health <= 0)
         {
-           //nDie?.Invoke();
+            OnDie?.Invoke();
         }
 
-        Debug.Log(health);
     }
 
 }

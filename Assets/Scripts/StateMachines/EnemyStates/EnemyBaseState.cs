@@ -35,6 +35,21 @@ public abstract class EnemyBaseState : State
     {
        float playerDistance =  (stateMachine.Player.transform.position - stateMachine.transform.position).magnitude;
        return playerDistance <= stateMachine.playerChasingRange;
+    }
 
+    protected bool IsInAttackRange()
+    {
+        float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
+        return playerDistanceSqr <= stateMachine.AttackRange * stateMachine.AttackRange;
+    }
+
+    protected bool ControllerVisibility()
+    {
+        if (stateMachine.Controller == null)
+        {
+            return false;
+        }
+
+        return stateMachine.Controller.enabled;
     }
 }
