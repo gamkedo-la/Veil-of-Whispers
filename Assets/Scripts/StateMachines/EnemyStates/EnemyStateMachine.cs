@@ -29,6 +29,7 @@ public class EnemyStateMachine : StateMachine
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+
         Agent.updatePosition = false;
         Agent.updateRotation = false;
 
@@ -50,7 +51,7 @@ public class EnemyStateMachine : StateMachine
     {
         Health.OnTakeDamage -= HandleTakeDamage;
     }
-
+    
     private void HandleTakeDamage()
     {
         SwitchState(new EnemyImpactState(this));

@@ -5628,7 +5628,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1456
+  m_Name: pb_Mesh-1490
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -11846,6 +11846,7 @@ MonoBehaviour:
   <ForceReceiver>k__BackingField: {fileID: 1150822211789303875}
   <animator>k__BackingField: {fileID: 1150822211789303873}
   <Targeter>k__BackingField: {fileID: 995076018}
+  <Health>k__BackingField: {fileID: 1150822211789303876}
   <ledgeDetector>k__BackingField: {fileID: 0}
   <MovementSpeed>k__BackingField: 50
   <JumpForce>k__BackingField: 10
@@ -15177,6 +15178,7 @@ MonoBehaviour:
   <ForceReceiver>k__BackingField: {fileID: 6481861473530943289}
   <MovementSpeed>k__BackingField: 30
   <Agent>k__BackingField: {fileID: 6481861473530943290}
+  <Health>k__BackingField: {fileID: 6481861473530943292}
   <playerChasingRange>k__BackingField: 90
   <AttackRange>k__BackingField: 7
 --- !u!114 &6481861473530943289
