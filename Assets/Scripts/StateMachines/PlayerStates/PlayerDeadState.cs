@@ -14,7 +14,8 @@ public class PlayerDeadState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.animator.CrossFadeInFixedTime(DeadHash, CrossFadeDuration);
-        stateMachine.PlayerCollider.gameObject.SetActive(false);
+        stateMachine.PlayerCollider.enabled = false;
+        stateMachine.Enemycontroller.enabled = false;
     }
 
     public override void Tick(float deltaTime)

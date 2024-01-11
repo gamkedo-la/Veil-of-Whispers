@@ -28,7 +28,7 @@ public class EnemyChasingState : EnemyBaseState
             return;
         }
 
-        if(IsInAttackRange()) {
+        if(IsInAttackRange() && ControllerVisibility()) {
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
             return;
         }
@@ -55,10 +55,6 @@ public class EnemyChasingState : EnemyBaseState
         stateMachine.Agent.velocity = stateMachine.Controller.velocity;
     }
 
-    private bool IsInAttackRange()
-    {
-        float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
-        return playerDistanceSqr <= stateMachine.AttackRange * stateMachine.AttackRange;
-    }
+   
 
 }

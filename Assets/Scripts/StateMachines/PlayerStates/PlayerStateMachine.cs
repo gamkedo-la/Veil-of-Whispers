@@ -6,6 +6,9 @@ public class PlayerStateMachine : StateMachine
 {
     [field : SerializeField] public InputReader InputReader { get; private set; }
     [field: SerializeField] public CharacterController Controller { get; private set; }
+
+    [field: SerializeField] public CharacterController Enemycontroller { get; private set; }
+
     [field: SerializeField] public ForceReciever ForceReceiver { get; private set; }
     [field: SerializeField] public Animator animator { get; private set; }
 
