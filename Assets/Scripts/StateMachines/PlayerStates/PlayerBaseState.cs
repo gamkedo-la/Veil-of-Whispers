@@ -5,10 +5,12 @@ using UnityEngine;
 public abstract class PlayerBaseState : State
 {
     protected PlayerStateMachine stateMachine;
+    protected AudioState audioState;
      
     public PlayerBaseState(PlayerStateMachine stateMachine)
     {
         this.stateMachine = stateMachine;
+        audioState = stateMachine.gameObject.GetComponent<AudioState>();
     }
 
     protected void Move(float deltaTime)
@@ -19,12 +21,14 @@ public abstract class PlayerBaseState : State
     protected void Move(Vector3 motion, float deltaTime)
     {
         stateMachine.Controller.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);
+        audioState.PlayFootStepSound();
     }
 
 
     protected void ReturnToLocomotion()
     {
-      stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+        audioState.StopFootStepSound();
+        stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
     }
 
 

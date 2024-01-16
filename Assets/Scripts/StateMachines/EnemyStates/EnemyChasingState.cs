@@ -8,6 +8,7 @@ public class EnemyChasingState : EnemyBaseState
 {
     private readonly int EnemyBlendTreeHash = Animator.StringToHash("EnemyBlend");
     private readonly int MoveHash = Animator.StringToHash("move");
+    private AudioState audioState;
 
 
     private const float CrossFadeDuration = 0.1f;
@@ -18,12 +19,14 @@ public class EnemyChasingState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.animator.CrossFadeInFixedTime(EnemyBlendTreeHash, CrossFadeDuration);
+        audioState = stateMachine.GetComponent<AudioState>();
     }
 
     public override void Tick(float deltaTime)
     {
         if (!IsInChaseRange())
         {
+            audioState.StopFootStepSound();
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;
         }
@@ -32,6 +35,8 @@ public class EnemyChasingState : EnemyBaseState
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
             return;
         }
+
+        audioState.PlayFootStepSound();
 
         MoveToPlayer(deltaTime);
         FacePlayer();
@@ -48,6 +53,7 @@ public class EnemyChasingState : EnemyBaseState
 
     private void MoveToPlayer(float deltaTime)
     {
+
         stateMachine.Agent.destination = stateMachine.Player.transform.position;
 
         Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.MovementSpeed, deltaTime);
