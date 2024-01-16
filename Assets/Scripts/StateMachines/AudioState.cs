@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class AudioState : MonoBehaviour
 {
-    [SerializeField] AudioClip footStepSound;
 
-    [SerializeField] AudioClip playerAttackSound;
+    [SerializeField] AudioClip playerPunchSound;
+
+    [SerializeField] AudioClip playerKickSound;
 
     [SerializeField] AudioClip enemyAttackSound;
 
     [SerializeField] AudioSource src;
 
 
-   public void PlayerAttackSound()
+   public void PlayerPunchSound()
    {
-        AudioSource.PlayClipAtPoint(playerAttackSound,Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(playerPunchSound,Camera.main.transform.position);
    }
+
+    public void PlayerKickSound()
+    {
+        AudioSource.PlayClipAtPoint(playerKickSound, Camera.main.transform.position);
+    }
 
     public void EnemyAttackSound()
     {
@@ -30,6 +36,6 @@ public class AudioState : MonoBehaviour
 
     public void StopFootStepSound()
     {
-        src.Play();
+        src.Stop();
     }
 }
