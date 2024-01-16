@@ -447,7 +447,7 @@ PrefabInstance:
     - target: {fileID: 3253132827933222800, guid: dd00af3c24ab3bc43bf9ccb0218300f0,
         type: 3}
       propertyPath: m_text
-      value: Settings
+      value: Options
       objectReference: {fileID: 0}
     - target: {fileID: 3253132827933222800, guid: dd00af3c24ab3bc43bf9ccb0218300f0,
         type: 3}
