@@ -59,6 +59,7 @@ public class PlayerFreeLookState : PlayerBaseState
             stateMachine.SwitchState(new PlayerCrouchState(stateMachine));
         }
 
+      
 
 
 
