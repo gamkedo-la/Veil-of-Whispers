@@ -27,9 +27,10 @@ public class ForceReciever : MonoBehaviour
 
     public void Jump(float jumpForce)
     {
+        
         if(Controller.isGrounded)
         {
-            verticalVelocity += jumpForce;
+            verticalVelocity = jumpForce;
         }
     }
 }
