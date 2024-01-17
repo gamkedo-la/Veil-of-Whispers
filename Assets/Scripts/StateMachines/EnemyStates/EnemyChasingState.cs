@@ -55,10 +55,13 @@ public class EnemyChasingState : EnemyBaseState
     {
 
         stateMachine.Agent.destination = stateMachine.Player.transform.position;
+        Vector3 flatDesired = stateMachine.Agent.desiredVelocity.normalized;
+        flatDesired.y = 0f;
+        Move(flatDesired.normalized * stateMachine.MovementSpeed, deltaTime);
+        Vector3 flatVelocity = stateMachine.Controller.velocity;
+        flatVelocity.y = 0f;
 
-        Move(stateMachine.Agent.desiredVelocity.normalized * stateMachine.MovementSpeed, deltaTime);
-
-        stateMachine.Agent.velocity = stateMachine.Controller.velocity;
+        stateMachine.Agent.velocity = flatVelocity;
     }
 
    

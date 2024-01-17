@@ -16,7 +16,7 @@ public class ForceReciever : MonoBehaviour
 
        
 
-        if(Controller.isGrounded == false) 
+        //if(Controller.isGrounded == false) 
         {
             verticalVelocity += 3.0f * Physics.gravity.y * Time.deltaTime;
         }
@@ -27,8 +27,8 @@ public class ForceReciever : MonoBehaviour
 
     public void Jump(float jumpForce)
     {
-        
-        if(Controller.isGrounded)
+      //  Do a raycast check straight down to see if we are low enough to jump
+       // if(Controller.isGrounded)
         {
             verticalVelocity = jumpForce;
         }

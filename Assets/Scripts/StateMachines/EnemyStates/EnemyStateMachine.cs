@@ -10,7 +10,7 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public CharacterController Controller { get; private set; }
 
-    [field: SerializeField] public ForceReciever ForceReceiver { get; private set; }
+   // [field: SerializeField] public ForceReciever ForceReceiver { get; private set; }
 
     [field: SerializeField] public float MovementSpeed { get; private set; }
 

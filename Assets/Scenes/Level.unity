@@ -14401,7 +14401,7 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 1150822211789303871}
   <Controller>k__BackingField: {fileID: 1150822211789303869}
   <Enemycontroller>k__BackingField: {fileID: 6481861473530943287}
-  <ForceReceiver>k__BackingField: {fileID: 6481861473530943289}
+  <ForceReceiver>k__BackingField: {fileID: 1150822211789303875}
   <animator>k__BackingField: {fileID: 1150822211789303873}
   <Targeter>k__BackingField: {fileID: 995076018}
   <Health>k__BackingField: {fileID: 1150822211789303876}
@@ -19548,7 +19548,6 @@ GameObject:
   - component: {fileID: 6481861473530943286}
   - component: {fileID: 6481861473530943287}
   - component: {fileID: 6481861473530943288}
-  - component: {fileID: 6481861473530943289}
   - component: {fileID: 6481861473530943290}
   - component: {fileID: 6481861473530943291}
   - component: {fileID: 6481861473530943292}
@@ -20281,25 +20280,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <animator>k__BackingField: {fileID: 6481861473530943283}
   <Controller>k__BackingField: {fileID: 6481861473530943287}
-  <ForceReceiver>k__BackingField: {fileID: 6481861473530943289}
   <MovementSpeed>k__BackingField: 30
   <Agent>k__BackingField: {fileID: 6481861473530943290}
   <Health>k__BackingField: {fileID: 6481861473530943292}
   <playerChasingRange>k__BackingField: 90
   <AttackRange>k__BackingField: 7
---- !u!114 &6481861473530943289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5962732948932939144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc815fe0b5d93f94aa0173faa778f42b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Controller: {fileID: 6481861473530943287}
 --- !u!195 &6481861473530943290
 NavMeshAgent:
   m_ObjectHideFlags: 0
