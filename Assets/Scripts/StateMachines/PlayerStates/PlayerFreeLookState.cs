@@ -59,9 +59,12 @@ public class PlayerFreeLookState : PlayerBaseState
             stateMachine.SwitchState(new PlayerCrouchState(stateMachine));
         }
 
+        if(!stateMachine.Controller.isGrounded )
+        {
+            stateMachine.SwitchState(new PlayerFreeFallState(stateMachine));
+        }
+
       
-
-
 
         Vector3 movement = new Vector3();
 
