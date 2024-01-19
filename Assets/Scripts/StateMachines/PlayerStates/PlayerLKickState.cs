@@ -20,7 +20,7 @@ public class PlayerLKickState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
 
-        normalizedTime = GetNormalizedTime(stateMachine.animator, "PlayerKickLeft");
+        normalizedTime = GetNormalizedTime(stateMachine.animator, "Attack");
 
 
         if (normalizedTime >= 1f)

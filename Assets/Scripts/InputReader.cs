@@ -119,7 +119,6 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
         {
             isPunchR = true;
         }
-
     }
 
     public void OnLeftPunch(InputAction.CallbackContext context)

@@ -34,7 +34,7 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
 
-        if (stateMachine.InputReader.isPunchR)
+        if (stateMachine.InputReader.isPunchR == true)
         {
             stateMachine.SwitchState(new PlayerRPunchState(stateMachine));
         }
@@ -58,13 +58,6 @@ public class PlayerFreeLookState : PlayerBaseState
         {
             stateMachine.SwitchState(new PlayerCrouchState(stateMachine));
         }
-
-        if(!stateMachine.Controller.isGrounded )
-        {
-            stateMachine.SwitchState(new PlayerFreeFallState(stateMachine));
-        }
-
-      
 
         Vector3 movement = new Vector3();
 
