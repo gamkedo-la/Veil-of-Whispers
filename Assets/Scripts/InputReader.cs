@@ -123,13 +123,10 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
     public void OnLeftPunch(InputAction.CallbackContext context)
     {
-
-        
-        if (context.performed) {
-            
-            isPunchL = true; }
-
-   
+        if (context.performed)
+        {
+            isPunchL = true;
+        }
     }
 
     public void OnRightKick(InputAction.CallbackContext context)

@@ -34,8 +34,10 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
 
-        if (stateMachine.InputReader.isPunchR == true)
+        if (stateMachine.InputReader.isPunchR)
         {
+            Debug.Log("Switching to PlayerRPunchState");
+
             stateMachine.SwitchState(new PlayerRPunchState(stateMachine));
         }
 
