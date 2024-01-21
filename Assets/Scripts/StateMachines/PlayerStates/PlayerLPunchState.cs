@@ -24,7 +24,7 @@ public class PlayerLPunchState : PlayerBaseState
 
         if (normalizedTime >= 1f)
         {
-            ReturnToLocomotion();
+            stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
         }
 
     }

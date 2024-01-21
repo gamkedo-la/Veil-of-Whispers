@@ -36,23 +36,28 @@ public class PlayerFreeLookState : PlayerBaseState
 
         if (stateMachine.InputReader.isPunchR)
         {
-            Debug.Log("Switching to PlayerRPunchState");
-
+            stateMachine.InputReader.isPunchR = false;
             stateMachine.SwitchState(new PlayerRPunchState(stateMachine));
         }
 
         if (stateMachine.InputReader.isPunchL)
         {
+            stateMachine.InputReader.isPunchL = false;
+
             stateMachine.SwitchState(new PlayerLPunchState(stateMachine));
         }
 
         if (stateMachine.InputReader.isKickR)
         {
+            stateMachine.InputReader.isKickR = false;
+
             stateMachine.SwitchState(new PlayerRKickState(stateMachine));
         }
 
         if (stateMachine.InputReader.isKickL)
         {
+            stateMachine.InputReader.isKickL = false;
+
             stateMachine.SwitchState(new PlayerLKickState(stateMachine));
         }
 
