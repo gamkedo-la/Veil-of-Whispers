@@ -44,7 +44,7 @@ public class EnemyChasingState : EnemyBaseState
         if (Physics.Raycast(stateMachine.transform.position,Vector3.down,out raycast))
         {
             Debug.Log((stateMachine.transform.position - raycast.point).y);
-          //  stateMachine.transform.position = raycast.point + Vector3.up * 10f;
+            stateMachine.transform.position = raycast.point + Vector3.up * 6f;
         }
 
         FacePlayer();
