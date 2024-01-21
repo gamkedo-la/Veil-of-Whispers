@@ -24,7 +24,7 @@ public class PlayerRPunchState : PlayerBaseState
         normalizedTime = GetNormalizedTime(stateMachine.animator, "Attack");
 
 
-        if (normalizedTime >= 2f)
+        if (normalizedTime >= 1f)
         {
             stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
         }
