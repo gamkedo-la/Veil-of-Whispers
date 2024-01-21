@@ -24,7 +24,6 @@ public class WeaponDamage : MonoBehaviour
         if(other.TryGetComponent<Health>(out Health health))
         {
             health.DealDamage(1);
-            Debug.Log(health);
         }
     }
 }

@@ -43,7 +43,6 @@ public class EnemyChasingState : EnemyBaseState
         RaycastHit raycast;
         if (Physics.Raycast(stateMachine.transform.position,Vector3.down,out raycast))
         {
-            Debug.Log((stateMachine.transform.position - raycast.point).y);
             stateMachine.transform.position = raycast.point + Vector3.up * 6f;
         }
 
