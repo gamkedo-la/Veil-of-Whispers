@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerRPunchState : PlayerBaseState
 {
     private readonly int PlayerPunchHash = Animator.StringToHash("PlayerPunchRight");
-    private const float CrossFadeDuration = 1f;
+    private const float CrossFadeDuration = 0.5f;
     float normalizedTime;
 
 

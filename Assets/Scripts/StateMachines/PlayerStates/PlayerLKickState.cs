@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLKickState : PlayerBaseState
 {
     private readonly int PlayerKickLHash = Animator.StringToHash("PlayerKickLeft");
-    private const float CrossFadeDuration = 1f;
+    private const float CrossFadeDuration = 0.5f;
     float normalizedTime;
     public PlayerLKickState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
