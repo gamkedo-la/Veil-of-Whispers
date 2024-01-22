@@ -14,7 +14,7 @@ public class Footsteps : MonoBehaviour
     public void Step()
     {
         AudioClip audioClip = GetAudioClip();
-        audioSource.PlayOneShot(audioClip);
+        audioSource.PlayOneShot(audioClip,0.5f);
     }
 
     private AudioClip GetAudioClip()
