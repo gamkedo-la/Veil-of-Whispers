@@ -21,13 +21,13 @@ public abstract class PlayerBaseState : State
     protected void Move(Vector3 motion, float deltaTime)
     {
         stateMachine.Controller.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);
-        audioState.PlayFootStepSound();
+       // audioState.PlayFootStepSound();
     }
 
 
     protected void ReturnToLocomotion()
     {
-        audioState.StopFootStepSound();
+       // audioState.StopFootStepSound();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
     }
 

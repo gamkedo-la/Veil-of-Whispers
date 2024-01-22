@@ -29,13 +29,13 @@ public class AudioState : MonoBehaviour
         AudioSource.PlayClipAtPoint(enemyAttackSound, Camera.main.transform.position);
     }
 
-    public void PlayFootStepSound()
-    {
-        src.Play();
-    }
+    //public void PlayFootStepSound()
+    //{
+    //    src.Play();
+    //}
 
-    public void StopFootStepSound()
-    {
-        src.Stop();
-    }
+    //public void StopFootStepSound()
+    //{
+    //    src.Stop();
+    //}
 }

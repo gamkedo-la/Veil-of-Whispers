@@ -26,7 +26,7 @@ public class EnemyChasingState : EnemyBaseState
     {
         if (!IsInChaseRange())
         {
-            audioState.StopFootStepSound();
+            //audioState.StopFootStepSound();
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;
         }
@@ -36,7 +36,7 @@ public class EnemyChasingState : EnemyBaseState
             return;
         }
 
-        audioState.PlayFootStepSound();
+        //audioState.PlayFootStepSound();
 
         MoveToPlayer(deltaTime);
 

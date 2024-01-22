@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerFreeLookState : PlayerBaseState
 {
@@ -10,7 +11,8 @@ public class PlayerFreeLookState : PlayerBaseState
     private const float CrossFadeDuration = 0.1f;
 
 
-
+    private float snappedHorizontal = 0;
+    private float snappedVertical = 0;
 
 
 
@@ -68,23 +70,35 @@ public class PlayerFreeLookState : PlayerBaseState
 
         Vector3 movement = new Vector3();
 
-        Move(movement * stateMachine.MovementSpeed, deltaTime);
+
+
+
+
+        Move(movement.normalized * stateMachine.MovementSpeed, deltaTime);
+
+
 
 
 
         stateMachine.transform.Rotate(Vector3.up, stateMachine.InputReader.MovementValue.x * 140.0f * deltaTime);
 
-    
 
-        stateMachine.Controller.Move( stateMachine.InputReader.MovementValue.y * stateMachine.transform.forward * stateMachine.MovementSpeed * deltaTime);
-        
+
+
+
+        stateMachine.Controller.Move(stateMachine.InputReader.MovementValue.y * stateMachine.transform.forward * stateMachine.MovementSpeed * deltaTime);
+
+
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
         {
-            stateMachine.animator.SetFloat("FreeLookSpeed", 0, AnimatorDampTime, deltaTime);
+
+            stateMachine.animator.SetFloat("FreeLookSpeed", 0);
             return;
         }
 
-        stateMachine.animator.SetFloat("FreeLookSpeed", 1, AnimatorDampTime, deltaTime);
+         stateMachine.animator.SetFloat("FreeLookSpeed", 1, AnimatorDampTime, deltaTime);
+
+
     }
 
     private void OnJump()
