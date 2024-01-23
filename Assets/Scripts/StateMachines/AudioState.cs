@@ -11,6 +11,9 @@ public class AudioState : MonoBehaviour
 
     [SerializeField] AudioClip enemyAttackSound;
 
+    [SerializeField] AudioClip jumpSound;
+
+
     [SerializeField] AudioSource src;
 
 
@@ -27,6 +30,11 @@ public class AudioState : MonoBehaviour
     public void EnemyAttackSound()
     {
         AudioSource.PlayClipAtPoint(enemyAttackSound, Camera.main.transform.position);
+    }
+
+    public void JumpSound()
+    {
+        AudioSource.PlayClipAtPoint(jumpSound, Camera.main.transform.position);
     }
 
     //public void PlayFootStepSound()

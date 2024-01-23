@@ -23,6 +23,7 @@ public class PlayerJumpState : PlayerBaseState
         stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
         stateMachine.animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
         momentum = stateMachine.Controller.velocity;
+        audioState.JumpSound();
 
     }
 

@@ -6825,13 +6825,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9ccbafde4742ee9428741d4b7637af66, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.333
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 184
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7535,7 +7535,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh96942
+  m_Name: pb_Mesh161880
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -14216,6 +14216,7 @@ MonoBehaviour:
   playerPunchSound: {fileID: 8300000, guid: be5be81b33ed4194aa7724ecb140b9ee, type: 3}
   playerKickSound: {fileID: 8300000, guid: b0fc4c9fe7fca514bb42ec4e23a6d57c, type: 3}
   enemyAttackSound: {fileID: 8300000, guid: 5411185e5e9c03049bfcd91ee8e92b64, type: 3}
+  jumpSound: {fileID: 8300000, guid: 221c85efa9064ff468824065d83de530, type: 3}
   src: {fileID: 1150822211789303878}
 --- !u!82 &1150822211789303878
 AudioSource:
@@ -14229,7 +14230,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.481
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20994,6 +20995,7 @@ MonoBehaviour:
   playerPunchSound: {fileID: 8300000, guid: be5be81b33ed4194aa7724ecb140b9ee, type: 3}
   playerKickSound: {fileID: 8300000, guid: b0fc4c9fe7fca514bb42ec4e23a6d57c, type: 3}
   enemyAttackSound: {fileID: 8300000, guid: 5411185e5e9c03049bfcd91ee8e92b64, type: 3}
+  jumpSound: {fileID: 0}
   src: {fileID: 6481861473530943294}
 --- !u!82 &6481861473530943294
 AudioSource:
