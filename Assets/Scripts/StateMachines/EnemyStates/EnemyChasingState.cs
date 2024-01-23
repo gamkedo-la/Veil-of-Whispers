@@ -26,7 +26,6 @@ public class EnemyChasingState : EnemyBaseState
     {
         if (!IsInChaseRange())
         {
-            //audioState.StopFootStepSound();
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;
         }
@@ -36,7 +35,6 @@ public class EnemyChasingState : EnemyBaseState
             return;
         }
 
-        //audioState.PlayFootStepSound();
 
         MoveToPlayer(deltaTime);
 
@@ -63,18 +61,10 @@ public class EnemyChasingState : EnemyBaseState
 
         stateMachine.Agent.destination = stateMachine.Player.transform.position;
         Vector3 flatDesired = stateMachine.Agent.desiredVelocity.normalized;
-       /*if(flatDesired.y > 0f)
-        {
-            flatDesired.y = 0f;
-       }*/
 
         Move(flatDesired.normalized * stateMachine.MovementSpeed, deltaTime);
         Vector3 flatVelocity = stateMachine.Controller.velocity;
 
-      /*  if (flatVelocity.y > 0f)
-        {
-            flatVelocity.y = 0f;
-        }*/
 
 
         stateMachine.Agent.velocity = flatVelocity;

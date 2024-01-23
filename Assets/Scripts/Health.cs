@@ -9,15 +9,21 @@ public class Health : MonoBehaviour
     public event Action OnTakeDamage;
     public event Action OnDie;
 
+
     private int health;
+
+    Rigidbody rb;
 
 
     private void Start()
     {
         health = maxHealth;
+        rb = GetComponent<Rigidbody>();
     }
 
-   
+
+
+
 
     public void DealDamage(int damage)
     {
@@ -43,6 +49,8 @@ public class Health : MonoBehaviour
             Debug.Log("Works");
         }
     }
+
+
 
 
 }
