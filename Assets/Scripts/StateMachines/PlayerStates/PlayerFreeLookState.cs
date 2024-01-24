@@ -68,6 +68,13 @@ public class PlayerFreeLookState : PlayerBaseState
             stateMachine.SwitchState(new PlayerCrouchState(stateMachine));
         }
 
+        if (stateMachine.GroundCheck.IsGrounded() == false)
+        {
+            stateMachine.SwitchState(new PlayerFreeFallState(stateMachine));
+        }
+
+
+
         Vector3 movement = new Vector3();
 
 
@@ -87,6 +94,7 @@ public class PlayerFreeLookState : PlayerBaseState
         }
 
          stateMachine.animator.SetFloat("FreeLookSpeed", 1, AnimatorDampTime, deltaTime);
+
 
 
     }

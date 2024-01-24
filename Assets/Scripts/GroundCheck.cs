@@ -8,24 +8,11 @@ public class GroundCheck : MonoBehaviour
     private float groundingRaycastDistance = 8f;
     public event Action OnDie;
 
-
-
-
-    private void Update()
-    {
-        if (!IsGrounded())
-        {
-            // Free Look State
-        }
-       
-    }
-
-
-    bool IsGrounded()
+    public bool IsGrounded()
     {
 
         RaycastHit raycast;
-        if (Physics.Raycast(transform.position, Vector3.down, out raycast))
+        if (Physics.SphereCast(transform.position,5f, Vector3.down, out raycast))
         {
             if(Vector3.Distance(transform.position, raycast.point) < groundingRaycastDistance)
             {
@@ -37,8 +24,11 @@ public class GroundCheck : MonoBehaviour
                 return true;
             }
         }
-        
-        return false;
 
+        return false;
     }
+
+
+
+ 
 }
