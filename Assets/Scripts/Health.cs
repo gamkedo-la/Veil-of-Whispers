@@ -12,17 +12,12 @@ public class Health : MonoBehaviour
 
     private int health;
 
-    Rigidbody rb;
 
 
     private void Start()
     {
         health = maxHealth;
-        rb = GetComponent<Rigidbody>();
     }
-
-
-
 
 
     public void DealDamage(int damage)
@@ -37,6 +32,7 @@ public class Health : MonoBehaviour
         if(health <= 0)
         {
             OnDie?.Invoke();
+            Debug.Log("Dead");
         }
 
     }
@@ -46,7 +42,6 @@ public class Health : MonoBehaviour
         if (this.gameObject.CompareTag("Player") && other.gameObject.CompareTag("Floor"))
         {
             OnDie?.Invoke();
-            Debug.Log("Works");
         }
     }
 

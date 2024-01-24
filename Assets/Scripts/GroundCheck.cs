@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    public float groundingRaycastDistance = 0.2f;
+    private float groundingRaycastDistance = 8f;
 
 
 
@@ -23,17 +23,17 @@ public class GroundCheck : MonoBehaviour
 
     bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundingRaycastDistance);
 
-        if (hit.collider != null)
+        RaycastHit raycast;
+        if (Physics.Raycast(transform.position, Vector3.down, out raycast))
         {
-            Debug.Log("Character is grounded");
-            return true;
+            if(Vector3.Distance(transform.position, raycast.point) < groundingRaycastDistance)
+            {
+                return true;
+            }
         }
-        else
-        {
-            Debug.Log("Character is not grounded");
-            return false;
-        }
+        
+        return false;
+
     }
 }

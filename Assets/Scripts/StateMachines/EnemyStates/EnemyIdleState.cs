@@ -29,7 +29,7 @@ public class EnemyIdleState : EnemyBaseState
 
         if (IsInChaseRange() && ControllerVisibility())
         {
-           // stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
             return;
         }
 

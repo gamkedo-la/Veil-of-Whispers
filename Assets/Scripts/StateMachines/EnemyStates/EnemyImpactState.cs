@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class EnemyImpactState : EnemyBaseState
 {
-    private readonly int ImpactHash = Animator.StringToHash("EnemyDamagePunchR");
+    private readonly int PunchRImpactHash = Animator.StringToHash("EnemyDamagePunchR");
+
+    private readonly int PunchLImpactHash = Animator.StringToHash("EnemyDamagePunchL");
+
+    private readonly int KickImpactHash = Animator.StringToHash("KickDamage");
+
+
+
+
 
     private const float CrossFadeDuration = 0.1f;
 
@@ -17,8 +25,7 @@ public class EnemyImpactState : EnemyBaseState
 
     public override void Enter()
     {
-        stateMachine.animator.CrossFadeInFixedTime(ImpactHash, CrossFadeDuration);
-        Debug.Log("Enter Damage");
+        stateMachine.animator.CrossFadeInFixedTime(PunchRImpactHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
