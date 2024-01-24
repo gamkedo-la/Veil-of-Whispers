@@ -8,8 +8,15 @@ public class GroundCheck : MonoBehaviour
     private float groundingRaycastDistance = 8f;
     public float fallSpeed = 5f;
     public event Action OnDie;
+    AudioState audioState;
+    bool SoundRunning;
 
 
+    private void Start()
+    {
+        audioState = GetComponent<AudioState>();
+        SoundRunning = false;
+    }
 
     void Update()
     {
@@ -32,12 +39,16 @@ public class GroundCheck : MonoBehaviour
         {
             if(Vector3.Distance(transform.position, raycast.point) < groundingRaycastDistance)
             {
-               
-                
                 if (raycast.collider.gameObject.CompareTag("Floor"))
                 {
-                    OnDie?.Invoke();
+                    if(!SoundRunning)
+                    {
+                        SoundRunning = true;
+                        audioState.BodyHitGround();
+                        OnDie?.Invoke();
+                    }
                 }
+
                 return true;
             }
         }
