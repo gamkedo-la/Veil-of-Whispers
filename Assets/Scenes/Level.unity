@@ -20946,11 +20946,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <animator>k__BackingField: {fileID: 6481861473530943283}
   <Controller>k__BackingField: {fileID: 6481861473530943287}
-  <MovementSpeed>k__BackingField: 0
+  <MovementSpeed>k__BackingField: 20
   <Agent>k__BackingField: {fileID: 6481861473530943290}
   <Health>k__BackingField: {fileID: 6481861473530943292}
   <playerChasingRange>k__BackingField: 200
-  <AttackRange>k__BackingField: 3
+  <AttackRange>k__BackingField: 7
 --- !u!195 &6481861473530943290
 NavMeshAgent:
   m_ObjectHideFlags: 0

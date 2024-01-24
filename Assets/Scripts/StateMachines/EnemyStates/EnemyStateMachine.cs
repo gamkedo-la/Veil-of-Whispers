@@ -45,7 +45,7 @@ public class EnemyStateMachine : StateMachine
     private void OnEnable()
     {
         Health.OnTakeDamage += HandleTakeDamage;
-        Health.OnDie -= HandleDie;
+        Health.OnDie += HandleDie;
 
     }
 
