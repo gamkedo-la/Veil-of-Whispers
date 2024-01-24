@@ -6,7 +6,23 @@ using UnityEngine;
 public class GroundCheck : MonoBehaviour
 {
     private float groundingRaycastDistance = 8f;
+    public float fallSpeed = 5f;
     public event Action OnDie;
+
+
+
+    void Update()
+    {
+        if (!IsGrounded())
+        {
+            MoveDownward();
+        }
+    }
+
+    void MoveDownward()
+    {
+        transform.Translate(Vector3.down * fallSpeed );
+    }
 
     public bool IsGrounded()
     {
@@ -16,6 +32,7 @@ public class GroundCheck : MonoBehaviour
         {
             if(Vector3.Distance(transform.position, raycast.point) < groundingRaycastDistance)
             {
+               
                 
                 if (raycast.collider.gameObject.CompareTag("Floor"))
                 {
