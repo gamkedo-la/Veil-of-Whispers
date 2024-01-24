@@ -42,6 +42,9 @@ public class PlayerStateMachine : StateMachine
 
     public bool jump { get; set; }
 
+    bool alreadyDied = false;
+
+
 
 
 
@@ -74,8 +77,16 @@ public class PlayerStateMachine : StateMachine
         SwitchState(new PlayerImpactState(this));
     }
 
+
     private void HandleDie()
     {
+        if (alreadyDied)
+        {
+            return;
+        }
+
+        alreadyDied = true;
+
         SwitchState(new PlayerDeadState(this));
     }
 

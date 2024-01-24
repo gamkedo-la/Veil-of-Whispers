@@ -15,12 +15,9 @@ public class GroundCheck : MonoBehaviour
     {
         if (!IsGrounded())
         {
-            Debug.Log("Character is falling");
+            // Free Look State
         }
-        else
-        {
-            Debug.Log("Character is not falling");
-        }
+       
     }
 
 
