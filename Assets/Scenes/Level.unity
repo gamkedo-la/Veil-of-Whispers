@@ -14126,6 +14126,7 @@ MonoBehaviour:
   <animator>k__BackingField: {fileID: 1150822211789303873}
   <Targeter>k__BackingField: {fileID: 995076018}
   <Health>k__BackingField: {fileID: 1150822211789303876}
+  <GroundCheck>k__BackingField: {fileID: 1150822211789303883}
   <ledgeDetector>k__BackingField: {fileID: 0}
   <MovementSpeed>k__BackingField: 50
   <JumpForce>k__BackingField: 25
@@ -14385,7 +14386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63160339ce2a4824a86ce62c1ea68773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundingRaycastDistance: 10.2
 --- !u!4 &1167811112531260861
 Transform:
   m_ObjectHideFlags: 0

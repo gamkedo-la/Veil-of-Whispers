@@ -37,14 +37,7 @@ public class Health : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (this.gameObject.CompareTag("Player") && other.gameObject.CompareTag("Floor"))
-        {
-            OnDie?.Invoke();
-        }
-    }
-
+ 
 
 
 

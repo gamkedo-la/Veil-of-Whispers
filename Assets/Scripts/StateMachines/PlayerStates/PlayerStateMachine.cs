@@ -16,6 +16,9 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public Health Health { get; private set; }
 
+    [field: SerializeField] public GroundCheck GroundCheck { get; private set; }
+
+
 
 
     [field: SerializeField] public LedgeDetector ledgeDetector { get; private set; }
@@ -55,12 +58,14 @@ public class PlayerStateMachine : StateMachine
     {
         Health.OnTakeDamage += HandleTakeDamage;
         Health.OnDie += HandleDie;
+        GroundCheck.OnDie += HandleDie;
     }
 
     private void OnDisable()
     {
         Health.OnTakeDamage -= HandleTakeDamage;
         Health.OnDie -= HandleDie;
+        GroundCheck.OnDie -= HandleDie;
 
     }
 
