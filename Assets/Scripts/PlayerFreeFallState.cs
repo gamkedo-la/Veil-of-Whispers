@@ -9,7 +9,7 @@ public class PlayerFreeFallState : PlayerBaseState
 
     public PlayerFreeFallState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-
+        
     }
 
 

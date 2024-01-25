@@ -11,6 +11,8 @@ public class AudioState : MonoBehaviour
 
     [SerializeField] AudioClip enemyAttackSound;
 
+    [SerializeField] AudioClip manFearFallingSound;
+
     [SerializeField] AudioClip jumpSound;
 
     [SerializeField] AudioClip bodyHitGround;
@@ -46,13 +48,8 @@ public class AudioState : MonoBehaviour
         AudioSource.PlayClipAtPoint(jumpSound, Camera.main.transform.position);
     }
 
-    //public void PlayFootStepSound()
-    //{
-    //    src.Play();
-    //}
-
-    //public void StopFootStepSound()
-    //{
-    //    src.Stop();
-    //}
+    public void ManFearFallingSound()
+    {
+        AudioSource.PlayClipAtPoint(manFearFallingSound, Camera.main.transform.position);
+    }
 }

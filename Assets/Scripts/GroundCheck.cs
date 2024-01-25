@@ -9,19 +9,29 @@ public class GroundCheck : MonoBehaviour
     public float fallSpeed = 5f;
     public event Action OnDie;
     AudioState audioState;
-    bool SoundRunning;
+    bool soundRunning;
+    bool fallSound;
+    InputReader inputReader;
 
 
     private void Start()
     {
         audioState = GetComponent<AudioState>();
-        SoundRunning = false;
+        soundRunning = false;
+        fallSound = false;
+        inputReader = GetComponent<InputReader>();
     }
 
     void Update()
     {
-        if (!IsGrounded())
+        if (!IsGrounded() && inputReader.GetJump() == false)
         {
+            if (!fallSound)
+            {
+                fallSound = true;
+                audioState.ManFearFallingSound();
+            }
+
             MoveDownward();
         }
     }
@@ -41,9 +51,9 @@ public class GroundCheck : MonoBehaviour
             {
                 if (raycast.collider.gameObject.CompareTag("Floor"))
                 {
-                    if(!SoundRunning)
+                    if(!soundRunning)
                     {
-                        SoundRunning = true;
+                        soundRunning = true;
                         audioState.BodyHitGround();
                         OnDie?.Invoke();
                     }

@@ -19,7 +19,6 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.jump = true;
         stateMachine.ForceReceiver.Jump(stateMachine.JumpForce);
         stateMachine.animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
         momentum = stateMachine.Controller.velocity;
@@ -33,15 +32,13 @@ public class PlayerJumpState : PlayerBaseState
 
        if(stateMachine.Controller.velocity.y <= 0f)
        {
-          stateMachine.jump = false;
-          stateMachine.SwitchState(new PlayerFallState(stateMachine));
+            stateMachine.SwitchState(new PlayerFallState(stateMachine));
           return;
        }
     }
 
     public override void Exit()
     {
-
     }
 
 }

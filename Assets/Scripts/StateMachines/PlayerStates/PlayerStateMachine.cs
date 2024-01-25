@@ -40,7 +40,6 @@ public class PlayerStateMachine : StateMachine
 
     public Transform MainCameraTransform { get; private set; }
 
-    public bool jump { get; set; }
 
     bool alreadyDied = false;
 
