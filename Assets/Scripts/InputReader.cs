@@ -20,7 +20,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     public event Action TargetEvent;
     public event Action CancelEvent;
     public event Action JumpEvent;
-    private bool jumpCheck = false;
+    private bool jumpCheck;
 
 
 
@@ -34,6 +34,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
        playerInput.Player.SetCallbacks(this);
        playerInput.Player.Enable();
        isCrouch = false;
+       jumpCheck = false;
     }
     private void OnDestroy()
     {
@@ -68,12 +69,12 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (!context.performed) { jumpCheck = false; }
+        if (!context.performed) { return;  }
 
         else
         {
-            JumpEvent?.Invoke();
             jumpCheck = true;
+            JumpEvent?.Invoke();
         }
 
     }

@@ -24,7 +24,7 @@ public class GroundCheck : MonoBehaviour
 
     void Update()
     {
-        if (!IsGrounded() && inputReader.GetJump() == false)
+        if (!IsGrounded() && !inputReader.GetJump() == true)
         {
             if (!fallSound)
             {
