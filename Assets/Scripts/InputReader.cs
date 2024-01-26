@@ -84,13 +84,11 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
         if (context.performed) { 
 
             isCrouch = true;
-            Debug.Log(context);
         }
 
         if (context.canceled)
         {
             isCrouch = false;
-            Debug.Log(context);
         }
 
     }
@@ -154,6 +152,11 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     public bool GetJump()
     {
         return jumpCheck;
+    }
+
+    public void ChangeJumpCheck()
+    {
+        jumpCheck = false;
     }
 
  

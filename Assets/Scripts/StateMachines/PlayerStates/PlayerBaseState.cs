@@ -6,6 +6,7 @@ public abstract class PlayerBaseState : State
 {
     protected PlayerStateMachine stateMachine;
     protected AudioState audioState;
+    InputReader inputReader;
      
     public PlayerBaseState(PlayerStateMachine stateMachine)
     {

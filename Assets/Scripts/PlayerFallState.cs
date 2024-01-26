@@ -10,7 +10,7 @@ public class PlayerFallState : PlayerBaseState
 
     public PlayerFallState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-
+        
     }
 
     public override void Enter()
@@ -24,7 +24,7 @@ public class PlayerFallState : PlayerBaseState
     {
         Move(momentum, deltaTime);
 
-        if (stateMachine.Controller.isGrounded)
+        if (stateMachine.Controller.isGrounded )
         {
             ReturnToLocomotion();
         }

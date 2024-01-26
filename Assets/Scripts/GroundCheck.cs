@@ -34,6 +34,8 @@ public class GroundCheck : MonoBehaviour
 
             MoveDownward();
         }
+
+       
     }
 
     void MoveDownward()
