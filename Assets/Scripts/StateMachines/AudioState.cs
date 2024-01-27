@@ -13,6 +13,8 @@ public class AudioState : MonoBehaviour
 
     [SerializeField] AudioClip manFearFallingSound;
 
+    [SerializeField] AudioClip playerDieSound;
+
     [SerializeField] AudioClip enemyGrowlingSound;
 
     [SerializeField] AudioClip jumpSound;
@@ -57,5 +59,10 @@ public class AudioState : MonoBehaviour
     public void ManFearFallingSound()
     {
         AudioSource.PlayClipAtPoint(manFearFallingSound, Camera.main.transform.position);
+    }
+
+    public void PlayerDieSound()
+    {
+        AudioSource.PlayClipAtPoint(playerDieSound, Camera.main.transform.position);
     }
 }

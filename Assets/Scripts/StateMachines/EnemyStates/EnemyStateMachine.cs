@@ -89,6 +89,7 @@ public class EnemyStateMachine : StateMachine
     private void HandleDie()
     {
         SwitchState(new EnemyDeadState(this));
+        state.PlayerDieSound();
     }
 
 } 
