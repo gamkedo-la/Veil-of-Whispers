@@ -13,6 +13,8 @@ public class AudioState : MonoBehaviour
 
     [SerializeField] AudioClip manFearFallingSound;
 
+    [SerializeField] AudioClip enemyGrowlingSound;
+
     [SerializeField] AudioClip jumpSound;
 
     [SerializeField] AudioClip bodyHitGround;
@@ -37,6 +39,10 @@ public class AudioState : MonoBehaviour
         AudioSource.PlayClipAtPoint(enemyAttackSound, Camera.main.transform.position);
     }
 
+    public void EnemyGrowlSound()
+    {
+        AudioSource.PlayClipAtPoint(enemyGrowlingSound, Camera.main.transform.position);
+    }
     public void BodyHitGround()
     {
         AudioSource.PlayClipAtPoint(bodyHitGround, Camera.main.transform.position);

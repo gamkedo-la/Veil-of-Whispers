@@ -64,16 +64,25 @@ public class EnemyStateMachine : StateMachine
     private void HandleKickDamage()
     {
         SwitchState(new EnemyImpactState(this));
+        state.PlayerKickSound();
+        state.EnemyGrowlSound();
+
     }
 
     private void HandlePunchRDamage()
     {
         SwitchState(new EnemyPunchRState(this));
+        state.PlayerPunchSound();
+        state.EnemyGrowlSound();
+
     }
 
     private void HandlePunchLDamage()
     {
         SwitchState(new EnemyPunchLState(this));
+        state.PlayerPunchSound();
+        state.EnemyGrowlSound();
+
     }
 
 
