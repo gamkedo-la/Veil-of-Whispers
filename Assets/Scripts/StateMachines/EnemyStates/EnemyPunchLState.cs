@@ -2,24 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyImpactState : EnemyBaseState
+public class EnemyPunchLState : EnemyBaseState
 {
-
-
-    private readonly int KickImpactHash = Animator.StringToHash("KickDamage");
+    private readonly int PunchLImpactHash = Animator.StringToHash("EnemyDamagePunchL");
 
     private const float CrossFadeDuration = 0.1f;
 
     private float duration = 1f;
 
-    public EnemyImpactState(EnemyStateMachine stateMachine) : base(stateMachine)
+    public EnemyPunchLState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
 
     }
 
     public override void Enter()
     {
-        stateMachine.animator.CrossFadeInFixedTime(KickImpactHash, CrossFadeDuration);
+        stateMachine.animator.CrossFadeInFixedTime(PunchLImpactHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
@@ -34,8 +32,10 @@ public class EnemyImpactState : EnemyBaseState
         }
     }
 
-    public override void Exit() { }
+    public override void Exit()
+    {
 
+    }
 
-
+ 
 }

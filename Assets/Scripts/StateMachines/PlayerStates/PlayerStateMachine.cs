@@ -44,12 +44,6 @@ public class PlayerStateMachine : StateMachine
     bool alreadyDied = false;
 
 
-
-
-
-
-
-
     void Start()
     {
         MainCameraTransform = Camera.main.transform;

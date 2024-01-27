@@ -44,27 +44,38 @@ public class EnemyStateMachine : StateMachine
 
     private void OnEnable()
     {
-        Health.OnTakeDamage += HandleTakeDamage;
+        Health.OnKickRDamage +=  HandleKickDamage;
+        Health.OnKickLDamage +=  HandleKickDamage;
+        Health.OnPunchRDamage += HandlePunchRDamage;
+        Health.OnPunchLDamage += HandlePunchLDamage;
         Health.OnDie += HandleDie;
-
     }
 
     private void OnDisable()
     {
-        Health.OnTakeDamage += HandleTakeDamage;
+        Health.OnTakeDamage += HandleKickDamage;
         Health.OnDie -= HandleDie;
-
     }
 
-    private void HandleTakeDamage()
+    private void HandleKickDamage()
     {
         SwitchState(new EnemyImpactState(this));
     }
+
+    private void HandlePunchRDamage()
+    {
+        SwitchState(new EnemyPunchRState(this));
+    }
+
+    private void HandlePunchLDamage()
+    {
+        SwitchState(new EnemyPunchLState(this));
+    }
+
 
     private void HandleDie()
     {
         SwitchState(new EnemyDeadState(this));
     }
 
-   
 } 

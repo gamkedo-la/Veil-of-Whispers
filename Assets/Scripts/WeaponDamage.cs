@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,15 +16,15 @@ public class WeaponDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other == myCollider) { return; }
-
+        String tag = this.gameObject.tag;
+        if (other == myCollider) { return; }
         if(alreadyCollidedWith.Contains(other)) { return; }
 
         alreadyCollidedWith.Add(other);
 
         if(other.TryGetComponent<Health>(out Health health))
         {
-            health.DealDamage(1);
+            health.DealDamage(1,tag);
         }
     }
 }
