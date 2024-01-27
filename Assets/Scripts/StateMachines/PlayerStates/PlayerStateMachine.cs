@@ -40,6 +40,9 @@ public class PlayerStateMachine : StateMachine
 
     public Transform MainCameraTransform { get; private set; }
 
+    public AudioState state { get; private set; }
+
+
 
     bool alreadyDied = false;
 
@@ -47,6 +50,7 @@ public class PlayerStateMachine : StateMachine
     void Start()
     {
         MainCameraTransform = Camera.main.transform;
+        state = GetComponent<AudioState>();
         SwitchState(new PlayerFreeLookState(this)); 
     }
 
@@ -68,6 +72,7 @@ public class PlayerStateMachine : StateMachine
     private void HandleTakeDamage()
     {
         SwitchState(new PlayerImpactState(this));
+        state.EnemyAttackSound();
     }
 
 

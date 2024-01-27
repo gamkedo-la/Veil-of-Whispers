@@ -25,10 +25,14 @@ public class EnemyStateMachine : StateMachine
 
     public GameObject Player { get; private set; }
 
+    public AudioState state { get; private set; }
+
+
 
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        state = GetComponent<AudioState>(); 
 
         Agent.updatePosition = false;
         Agent.updateRotation = false;
