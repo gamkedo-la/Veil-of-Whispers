@@ -86,6 +86,8 @@ public class PlayerStateMachine : StateMachine
         alreadyDied = true;
 
         SwitchState(new PlayerDeadState(this));
+        state.PlayerDieSound();
+
     }
 
 }

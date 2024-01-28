@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class CameraLooseFollow1 : MonoBehaviour
 {
     Camera cam;
+    public Camera makeUpCam;
     public Transform player;
     RaycastHit hit;
     int layerMask;
@@ -31,6 +32,7 @@ public class CameraLooseFollow1 : MonoBehaviour
         Vector3 playerToCam = cam.transform.position - player.transform.position;
         bool raycastHit = Physics.Raycast(player.transform.position, playerToCam, out hit, camOffset.magnitude, layerMask);
         cam.transform.LookAt(player.transform.position + player.transform.forward * camLookAhead);
+        Vector3 hitDistance = hit.point - player.transform.position;
 
 
         if (raycastHit && cam.gameObject.transform.rotation.y > 100)
@@ -44,8 +46,19 @@ public class CameraLooseFollow1 : MonoBehaviour
             cam.transform.position = hit.point + leftDistance * 0.5f;
         }
 
+        Debug.Log(hitDistance.magnitude);
 
+        if(hitDistance.magnitude < 15)
+        {
+            cam = makeUpCam;
+            
+        }
 
+        if(hitDistance.magnitude > 15)
+        {
+            cam = Camera.main;
+        }
+      
     }
 
 }
