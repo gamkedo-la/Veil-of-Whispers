@@ -5,8 +5,10 @@ using UnityEngine.InputSystem;
 
 public class CameraLooseFollow1 : MonoBehaviour
 {
-    Camera cam;
+    public Camera mainCam;
     public Camera makeUpCam;
+    Camera cam;
+    Camera cam2;
     public Transform player;
     RaycastHit hit;
     int layerMask;
@@ -20,7 +22,9 @@ public class CameraLooseFollow1 : MonoBehaviour
 
     private void Start()
     {
-        cam = Camera.main;
+        cam = mainCam;
+        cam2 = makeUpCam;
+        cam2.gameObject.SetActive(false);
         layerMask = ~LayerMask.GetMask("Player", "Enemy","PlayerAttack","EnemyAttack");
     }
 
@@ -50,13 +54,14 @@ public class CameraLooseFollow1 : MonoBehaviour
 
         if(hitDistance.magnitude < 15)
         {
-            cam = makeUpCam;
-            
+            cam.gameObject.SetActive(false);
+            cam2.gameObject.SetActive(true);
         }
 
         if(hitDistance.magnitude > 15)
         {
-            cam = Camera.main;
+            cam.gameObject.SetActive(true);
+            cam2.gameObject.SetActive(false);
         }
       
     }
