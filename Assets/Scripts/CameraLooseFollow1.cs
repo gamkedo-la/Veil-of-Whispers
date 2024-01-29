@@ -9,8 +9,8 @@ public class CameraLooseFollow1 : MonoBehaviour
     public Camera makeUpCam;
     Camera cam;
     Camera cam2;
-    public Transform player;
     RaycastHit hit;
+    public Transform player;
     int layerMask;
     public float camBehind = 25f;
     public float camAbove = 5f;
@@ -24,7 +24,7 @@ public class CameraLooseFollow1 : MonoBehaviour
     {
         cam = mainCam;
         cam2 = makeUpCam;
-        cam2.gameObject.SetActive(false);
+        cam2.enabled = false;
         layerMask = ~LayerMask.GetMask("Player", "Enemy","PlayerAttack","EnemyAttack");
     }
 
@@ -54,14 +54,14 @@ public class CameraLooseFollow1 : MonoBehaviour
 
         if(hitDistance.magnitude < 15)
         {
-            cam.gameObject.SetActive(false);
-            cam2.gameObject.SetActive(true);
+            cam.enabled = false;
+            cam2.enabled = true;
         }
 
         if(hitDistance.magnitude > 15)
         {
-            cam.gameObject.SetActive(true);
-            cam2.gameObject.SetActive(false);
+            cam.enabled = true;
+            cam2.enabled = false;
         }
       
     }
