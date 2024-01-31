@@ -67,18 +67,21 @@ public class GroundCheck : MonoBehaviour
             {
                 if (raycast.collider.gameObject.CompareTag("Floor"))
                 {
-                    if(!soundRunning)
+                    Debug.Log("floor detected");
+                    OnDie?.Invoke();
+                    if (!soundRunning)
                     {
                         soundRunning = true;
                         audioState.BodyHitGround();
-                        OnDie?.Invoke();
-                        return 2; //Kill Floor
                     }
+
+                    return 2; //Kill Floor
+
                 }
 
-     
 
-                
+
+
 
                 return 1; // safe landing
             }
