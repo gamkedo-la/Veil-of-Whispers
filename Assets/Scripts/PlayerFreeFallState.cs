@@ -20,7 +20,15 @@ public class PlayerFreeFallState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
+        Vector3 movement = new Vector3();
 
+
+
+        Move(movement.normalized * stateMachine.MovementSpeed, deltaTime);
+
+        stateMachine.transform.Rotate(Vector3.up, stateMachine.InputReader.MovementValue.x * 140.0f * deltaTime);
+
+        stateMachine.Controller.Move(stateMachine.InputReader.MovementValue.y * stateMachine.transform.forward * stateMachine.MovementSpeed * deltaTime);
     }
 
     public override void Exit()

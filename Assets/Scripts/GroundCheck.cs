@@ -12,7 +12,7 @@ public class GroundCheck : MonoBehaviour
     bool soundRunning;
     bool fallSound;
     InputReader inputReader;
-
+    int previousGroundCheck = -1;
 
     private void Start()
     {
@@ -24,7 +24,21 @@ public class GroundCheck : MonoBehaviour
 
     void Update()
     {
-        if (!IsGrounded() && !inputReader.GetJump() == true)
+        int groundCheck = IsGrounded();
+        if(groundCheck == previousGroundCheck)
+        {
+            return;
+        }
+
+        previousGroundCheck = groundCheck;
+
+        if(groundCheck == 1)
+        {
+            PlayerStateMachine psm = GetComponent<PlayerStateMachine>();
+            psm.SwitchState(new PlayerFreeLookState(psm));
+        }
+
+        else if (groundCheck == 0 && !inputReader.GetJump() == true)
         {
             if (!fallSound)
             {
@@ -43,7 +57,7 @@ public class GroundCheck : MonoBehaviour
         transform.Translate(Vector3.down * fallSpeed );
     }
 
-    public bool IsGrounded()
+    public int IsGrounded()
     {
 
         RaycastHit raycast;
@@ -58,14 +72,19 @@ public class GroundCheck : MonoBehaviour
                         soundRunning = true;
                         audioState.BodyHitGround();
                         OnDie?.Invoke();
+                        return 2; //Kill Floor
                     }
                 }
 
-                return true;
+     
+
+                
+
+                return 1; // safe landing
             }
         }
 
-        return false;
+        return 0; // still falling
     }
 
 

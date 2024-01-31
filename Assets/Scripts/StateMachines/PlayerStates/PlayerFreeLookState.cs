@@ -68,7 +68,7 @@ public class PlayerFreeLookState : PlayerBaseState
             stateMachine.SwitchState(new PlayerCrouchState(stateMachine));
         }
 
-        if (stateMachine.GroundCheck.IsGrounded() == false )
+        if (stateMachine.GroundCheck.IsGrounded() == 0 )
         {
             stateMachine.SwitchState(new PlayerFreeFallState(stateMachine));
         }
