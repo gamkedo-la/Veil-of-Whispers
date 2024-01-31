@@ -55,7 +55,6 @@ public class CameraLooseFollow1 : MonoBehaviour
             cam.transform.position = hit.point + leftDistance * 0.5f;
         }
 
-        Debug.Log(hitDistance.magnitude);
 
         if(hitDistance.magnitude < 15)
         {
