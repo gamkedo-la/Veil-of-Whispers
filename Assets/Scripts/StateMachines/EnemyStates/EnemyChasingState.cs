@@ -24,13 +24,13 @@ public class EnemyChasingState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
-        if (!IsInChaseRange())
+        if (!IsInChaseRange() || !ControllerVisibility())
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;
         }
 
-        if(IsInAttackRange() && ControllerVisibility()) {
+        if(IsInAttackRange()) {
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
             return;
         }

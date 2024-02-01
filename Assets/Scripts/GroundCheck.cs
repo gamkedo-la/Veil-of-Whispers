@@ -25,6 +25,7 @@ public class GroundCheck : MonoBehaviour
     void Update()
     {
         int groundCheck = IsGrounded();
+
         if(groundCheck == previousGroundCheck)
         {
             return;
@@ -48,8 +49,6 @@ public class GroundCheck : MonoBehaviour
 
             MoveDownward();
         }
-
-       
     }
 
     void MoveDownward()

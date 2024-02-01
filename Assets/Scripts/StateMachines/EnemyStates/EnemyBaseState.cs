@@ -45,11 +45,7 @@ public abstract class EnemyBaseState : State
 
     protected bool ControllerVisibility()
     {
-        if (stateMachine.Controller == null)
-        {
-            return false;
-        }
-
-        return stateMachine.Controller.enabled;
+        CharacterController controller = stateMachine.Player.GetComponent<CharacterController>();
+        return controller.enabled;
     }
 }
