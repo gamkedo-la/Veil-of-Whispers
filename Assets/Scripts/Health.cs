@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
     public event Action OnTakeDamage;
     public event Action OnDie;
     public  TMP_Text healthDisplay;
+    public bool countEnemy = true;
     private int health;
 
 
@@ -24,6 +25,11 @@ public class Health : MonoBehaviour
         if (healthDisplay)
         {
             UpdateHealthDisplay();
+        }
+
+        if(countEnemy)
+        {
+            EnemyCounter.Instance.CountNewEnemy();
         }
     }
 
@@ -66,6 +72,11 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             OnDie?.Invoke();
+
+            if (countEnemy)
+            {
+                EnemyCounter.Instance.RecordDeath();
+            }
         }
 
     }

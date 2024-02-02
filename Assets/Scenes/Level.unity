@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 13295605}
   - component: {fileID: 13295607}
   - component: {fileID: 13295606}
+  - component: {fileID: 13295608}
   m_Layer: 5
   m_Name: Enemies
   m_TagString: Untagged
@@ -254,6 +255,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13295604}
   m_CullTransparentMesh: 1
+--- !u!114 &13295608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13295604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e9cf559ec900d842bc256db2fb2471b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &13845059
 Mesh:
   m_ObjectHideFlags: 0
@@ -24248,6 +24261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   healthDisplay: {fileID: 1027149769}
+  countEnemy: 0
 --- !u!114 &1150822211789303877
 MonoBehaviour:
   m_ObjectHideFlags: 0
