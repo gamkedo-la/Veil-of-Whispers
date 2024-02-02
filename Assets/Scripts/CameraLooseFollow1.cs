@@ -6,9 +6,8 @@ using UnityEngine.InputSystem;
 public class CameraLooseFollow1 : MonoBehaviour
 {
     public Camera mainCam;
-    public Camera makeUpCam;
+    public Transform makeUpCam;
     Camera cam;
-    Camera cam2;
     RaycastHit hit;
     public Transform player;
     int layerMask;
@@ -18,7 +17,6 @@ public class CameraLooseFollow1 : MonoBehaviour
     public Vector3 rightDistance;
     public Vector3 leftDistance;
     Vector3 camPos;
-    Vector3 cam2Pos;
 
 
 
@@ -26,10 +24,8 @@ public class CameraLooseFollow1 : MonoBehaviour
     private void Start()
     {
         cam = mainCam;
-        cam2 = makeUpCam;
         camPos = cam.transform.position;
-        cam2Pos = cam2.transform.position;
-        cam2.enabled = false;
+       // cam2.enabled = false;
         layerMask = ~LayerMask.GetMask("Player", "Enemy","PlayerAttack","EnemyAttack");
     }
 
@@ -56,20 +52,7 @@ public class CameraLooseFollow1 : MonoBehaviour
         }
 
 
-        if(hitDistance.magnitude < 15)
-        {
-            cam.enabled = false;
-            cam2.enabled = true;
 
-           // cam.transform.position = Vector3.Lerp(cam.transform.position, cam2Pos, Time.deltaTime);
-        }
-
-        if(hitDistance.magnitude > 15)
-        {
-            cam.enabled = true;
-            cam2.enabled = false;
-          //  cam.transform.position = Vector3.Lerp(cam.transform.position,camPos,Time.deltaTime);
-        }
       
     }
 
