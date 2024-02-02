@@ -9004,7 +9004,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.6666667
+  m_VoxelSize: 0.5
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2c1401380a12f7f4a8e2f78badb001e5, type: 2}
   m_BuildHeightMesh: 1
@@ -22695,7 +22695,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 12
-  m_Radius: 2.5
+  m_Radius: 2
   m_SlopeLimit: 60
   m_StepOffset: 5
   m_SkinWidth: 0.08
