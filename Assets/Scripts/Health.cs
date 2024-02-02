@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Health : MonoBehaviour
     public event Action OnKickLDamage;
     public event Action OnTakeDamage;
     public event Action OnDie;
+    public  TMP_Text healthDisplay;
     private int health;
 
 
@@ -19,6 +21,10 @@ public class Health : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        if (healthDisplay)
+        {
+            UpdateHealthDisplay();
+        }
     }
 
 
@@ -27,6 +33,10 @@ public class Health : MonoBehaviour
         if (health == 0) { return; }
         health = Mathf.Max(health - damage, 0);
 
+        if (healthDisplay)
+        {
+            UpdateHealthDisplay();
+        }
         if (tag == "RightPunch")
         {
             OnPunchRDamage?.Invoke();
@@ -60,8 +70,10 @@ public class Health : MonoBehaviour
 
     }
 
+    private void UpdateHealthDisplay()
+    {
+        healthDisplay.text ="Health: " + health + "/" + maxHealth;
+    }
+
  
-
-
-
 }
