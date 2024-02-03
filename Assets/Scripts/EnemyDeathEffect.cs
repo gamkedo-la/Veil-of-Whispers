@@ -21,7 +21,7 @@ public class EnemyDeathEffect : MonoBehaviour
     public void InstantiateObject()
     {
         Instantiate(deathEffect, insPos.position, transform.rotation);
-        if(timer > 2)
+        if(timer > 5)
         {
             DestroyEnemy();
         }
