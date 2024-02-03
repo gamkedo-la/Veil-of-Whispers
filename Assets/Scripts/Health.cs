@@ -46,6 +46,7 @@ public class Health : MonoBehaviour
         {
             UpdateHealthDisplay();
         }
+
         if (tag == "RightPunch")
         {
             OnPunchRDamage?.Invoke();

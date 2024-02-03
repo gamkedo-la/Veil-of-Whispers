@@ -20,6 +20,8 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     public event Action TargetEvent;
     public event Action CancelEvent;
     public event Action JumpEvent;
+    private int  punchFlag;
+    private int  kickFlag;
     private bool jumpCheck;
 
 
@@ -35,6 +37,8 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
        playerInput.Player.Enable();
        isCrouch = false;
        jumpCheck = false;
+       punchFlag = 0;
+       kickFlag = 0;
     }
     private void OnDestroy()
     {
@@ -117,37 +121,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
         }
     }
 
-    public void OnRightPunch(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            isPunchR = true;
-        }
-    }
-
-    public void OnLeftPunch(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            isPunchL = true;
-        }
-    }
-
-    public void OnRightKick(InputAction.CallbackContext context)
-    {
-        if (context.performed) {
-
-            isKickR = true; }
-
-      
-    }
-
-    public void OnLeftKick(InputAction.CallbackContext context)
-    {
-        if (context.performed) { isKickL = true; }
-
-      
-    }
+   
 
     public bool GetJump()
     {
@@ -159,5 +133,40 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
         jumpCheck = false;
     }
 
- 
+    public void OnPunch(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            if (punchFlag == 0)
+            {
+                isPunchR = true;
+                punchFlag = 1;
+            }
+
+            else if (punchFlag == 1)
+            {
+                isPunchL = true;
+                punchFlag = 0;
+            }
+        }
+       
+    }
+
+    public void OnKick(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (kickFlag == 0)
+            {
+                isKickR = true;
+                kickFlag = 1;
+            }
+
+            else if (kickFlag == 1)
+            {
+                isKickL = true;
+                kickFlag = 0;
+            }
+        }
+    }
 }

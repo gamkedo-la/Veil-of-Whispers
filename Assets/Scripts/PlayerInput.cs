@@ -91,36 +91,18 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RightPunch"",
+                    ""name"": ""Punch"",
                     ""type"": ""Button"",
-                    ""id"": ""adae04a0-c0f1-4770-a877-07de056d42fe"",
+                    ""id"": ""00e0d5ef-47fa-47b5-be26-4face5dca24c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""LeftPunch"",
+                    ""name"": ""Kick"",
                     ""type"": ""Button"",
-                    ""id"": ""5ea8d144-61db-451f-b06a-b1804a5aecc6"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""RightKick"",
-                    ""type"": ""Button"",
-                    ""id"": ""aa3f2269-3c0c-4727-9df5-6a54fe415598"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""LeftKick"",
-                    ""type"": ""Button"",
-                    ""id"": ""a868b8b3-39ba-4452-8857-fba5ca5afa16"",
+                    ""id"": ""92de01ae-3614-410b-b033-a7d65a2bf555"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -251,45 +233,23 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""aa8b32eb-12cb-48d4-b073-d30f4cacca30"",
-                    ""path"": ""<Keyboard>/numpad1"",
+                    ""id"": ""55c8ae7d-dafb-406d-889a-1fdd9708bdce"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightPunch"",
+                    ""action"": ""Punch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8159ffb7-58ef-4380-82ef-930d13e53334"",
-                    ""path"": ""<Keyboard>/numpad2"",
+                    ""id"": ""3f2517cc-2e71-412f-a6a4-cfe7d15defb3"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftPunch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""050f1d37-3646-4bc0-b8a8-4161c30287bd"",
-                    ""path"": ""<Keyboard>/numpad4"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RightKick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""43b231a0-30c7-4158-a16a-43aa9faa558c"",
-                    ""path"": ""<Keyboard>/numpad5"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LeftKick"",
+                    ""action"": ""Kick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -307,10 +267,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
-        m_Player_RightPunch = m_Player.FindAction("RightPunch", throwIfNotFound: true);
-        m_Player_LeftPunch = m_Player.FindAction("LeftPunch", throwIfNotFound: true);
-        m_Player_RightKick = m_Player.FindAction("RightKick", throwIfNotFound: true);
-        m_Player_LeftKick = m_Player.FindAction("LeftKick", throwIfNotFound: true);
+        m_Player_Punch = m_Player.FindAction("Punch", throwIfNotFound: true);
+        m_Player_Kick = m_Player.FindAction("Kick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -379,10 +337,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Pause;
-    private readonly InputAction m_Player_RightPunch;
-    private readonly InputAction m_Player_LeftPunch;
-    private readonly InputAction m_Player_RightKick;
-    private readonly InputAction m_Player_LeftKick;
+    private readonly InputAction m_Player_Punch;
+    private readonly InputAction m_Player_Kick;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -394,10 +350,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
-        public InputAction @RightPunch => m_Wrapper.m_Player_RightPunch;
-        public InputAction @LeftPunch => m_Wrapper.m_Player_LeftPunch;
-        public InputAction @RightKick => m_Wrapper.m_Player_RightKick;
-        public InputAction @LeftKick => m_Wrapper.m_Player_LeftKick;
+        public InputAction @Punch => m_Wrapper.m_Player_Punch;
+        public InputAction @Kick => m_Wrapper.m_Player_Kick;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -428,18 +382,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
-            @RightPunch.started += instance.OnRightPunch;
-            @RightPunch.performed += instance.OnRightPunch;
-            @RightPunch.canceled += instance.OnRightPunch;
-            @LeftPunch.started += instance.OnLeftPunch;
-            @LeftPunch.performed += instance.OnLeftPunch;
-            @LeftPunch.canceled += instance.OnLeftPunch;
-            @RightKick.started += instance.OnRightKick;
-            @RightKick.performed += instance.OnRightKick;
-            @RightKick.canceled += instance.OnRightKick;
-            @LeftKick.started += instance.OnLeftKick;
-            @LeftKick.performed += instance.OnLeftKick;
-            @LeftKick.canceled += instance.OnLeftKick;
+            @Punch.started += instance.OnPunch;
+            @Punch.performed += instance.OnPunch;
+            @Punch.canceled += instance.OnPunch;
+            @Kick.started += instance.OnKick;
+            @Kick.performed += instance.OnKick;
+            @Kick.canceled += instance.OnKick;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -465,18 +413,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
-            @RightPunch.started -= instance.OnRightPunch;
-            @RightPunch.performed -= instance.OnRightPunch;
-            @RightPunch.canceled -= instance.OnRightPunch;
-            @LeftPunch.started -= instance.OnLeftPunch;
-            @LeftPunch.performed -= instance.OnLeftPunch;
-            @LeftPunch.canceled -= instance.OnLeftPunch;
-            @RightKick.started -= instance.OnRightKick;
-            @RightKick.performed -= instance.OnRightKick;
-            @RightKick.canceled -= instance.OnRightKick;
-            @LeftKick.started -= instance.OnLeftKick;
-            @LeftKick.performed -= instance.OnLeftKick;
-            @LeftKick.canceled -= instance.OnLeftKick;
+            @Punch.started -= instance.OnPunch;
+            @Punch.performed -= instance.OnPunch;
+            @Punch.canceled -= instance.OnPunch;
+            @Kick.started -= instance.OnKick;
+            @Kick.performed -= instance.OnKick;
+            @Kick.canceled -= instance.OnKick;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -503,9 +445,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
-        void OnRightPunch(InputAction.CallbackContext context);
-        void OnLeftPunch(InputAction.CallbackContext context);
-        void OnRightKick(InputAction.CallbackContext context);
-        void OnLeftKick(InputAction.CallbackContext context);
+        void OnPunch(InputAction.CallbackContext context);
+        void OnKick(InputAction.CallbackContext context);
     }
 }

@@ -69,36 +69,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RightPunch",
+                    "name": "Punch",
                     "type": "Button",
-                    "id": "adae04a0-c0f1-4770-a877-07de056d42fe",
+                    "id": "00e0d5ef-47fa-47b5-be26-4face5dca24c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "LeftPunch",
+                    "name": "Kick",
                     "type": "Button",
-                    "id": "5ea8d144-61db-451f-b06a-b1804a5aecc6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RightKick",
-                    "type": "Button",
-                    "id": "aa3f2269-3c0c-4727-9df5-6a54fe415598",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "LeftKick",
-                    "type": "Button",
-                    "id": "a868b8b3-39ba-4452-8857-fba5ca5afa16",
+                    "id": "92de01ae-3614-410b-b033-a7d65a2bf555",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -229,45 +211,23 @@
                 },
                 {
                     "name": "",
-                    "id": "aa8b32eb-12cb-48d4-b073-d30f4cacca30",
-                    "path": "<Keyboard>/numpad1",
+                    "id": "55c8ae7d-dafb-406d-889a-1fdd9708bdce",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightPunch",
+                    "action": "Punch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "8159ffb7-58ef-4380-82ef-930d13e53334",
-                    "path": "<Keyboard>/numpad2",
+                    "id": "3f2517cc-2e71-412f-a6a4-cfe7d15defb3",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftPunch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "050f1d37-3646-4bc0-b8a8-4161c30287bd",
-                    "path": "<Keyboard>/numpad4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RightKick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "43b231a0-30c7-4158-a16a-43aa9faa558c",
-                    "path": "<Keyboard>/numpad5",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LeftKick",
+                    "action": "Kick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
