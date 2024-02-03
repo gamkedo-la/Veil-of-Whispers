@@ -9,6 +9,7 @@ TagManager:
   - RightKick
   - LeftPunch
   - RightPunch
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -13,14 +13,17 @@ public class Health : MonoBehaviour
     public event Action OnKickLDamage;
     public event Action OnTakeDamage;
     public event Action OnDie;
-    public  TMP_Text healthDisplay;
+    private EnemyDeathEffect enemyDeathEffect;
+    public TMP_Text healthDisplay;
     public bool countEnemy = true;
     private int health;
 
 
 
+
     private void Start()
     {
+        enemyDeathEffect = GetComponent<EnemyDeathEffect>();
         health = maxHealth;
         if (healthDisplay)
         {
@@ -71,6 +74,11 @@ public class Health : MonoBehaviour
 
         if (health <= 0)
         {
+            if (gameObject.CompareTag("Enemy"))
+            {
+                enemyDeathEffect.InstantiateObject();
+            }
+
             OnDie?.Invoke();
 
             if (countEnemy)

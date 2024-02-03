@@ -957,9 +957,10 @@ GameObject:
   - component: {fileID: 3925685459018343691}
   - component: {fileID: 371371414330289410}
   - component: {fileID: 1031110084270530007}
+  - component: {fileID: 1479766294201983414}
   m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -979,6 +980,7 @@ Transform:
   m_Children:
   - {fileID: 2291488818925833467}
   - {fileID: 2180802308928204003}
+  - {fileID: 652067732787889688}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!95 &1184172038203830481
@@ -1132,6 +1134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  enemyDeathEffect: {fileID: 0}
   healthDisplay: {fileID: 0}
   countEnemy: 1
 --- !u!114 &3925685459018343691
@@ -1266,6 +1269,52 @@ MonoBehaviour:
   footsteps:
   - {fileID: 8300000, guid: 28fd3c2a2ae92cc43863272401569f4f, type: 3}
   - {fileID: 8300000, guid: 2bdfe6f59416f094c9933641bcfbbd42, type: 3}
+--- !u!114 &1479766294201983414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3791040703447566138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bafeb7bc9bad34c9df72e1fd6d04d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 659138614582883351, guid: 44fcdaf4e6db21742935d9900cb8b630,
+    type: 3}
+  insPos: {fileID: 652067732787889688}
+--- !u!1 &3818814120344008748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 652067732787889688}
+  m_Layer: 6
+  m_Name: DeathEffectPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &652067732787889688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3818814120344008748}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 814365722250529442}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3862911576162326997
 GameObject:
   m_ObjectHideFlags: 0
