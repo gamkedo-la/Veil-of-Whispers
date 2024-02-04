@@ -86,6 +86,11 @@ public class Health : MonoBehaviour
             {
                 EnemyCounter.Instance.RecordDeath();
             }
+
+            if (gameObject.CompareTag("Player"))
+            {
+                ChangeTint();
+            }
         }
 
     }
@@ -95,5 +100,12 @@ public class Health : MonoBehaviour
         healthDisplay.text ="Health: " + health + "/" + maxHealth;
     }
 
- 
+    private void ChangeTint()
+    {
+        RenderSettings.ambientLight = Color.red;
+
+    }
+
 }
+ 
+

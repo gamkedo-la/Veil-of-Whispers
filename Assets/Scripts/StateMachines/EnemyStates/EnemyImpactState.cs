@@ -10,7 +10,7 @@ public class EnemyImpactState : EnemyBaseState
 
     private const float CrossFadeDuration = 0.1f;
 
-    private float duration = 1f;
+    private float duration = 0.5f;
 
     public EnemyImpactState(EnemyStateMachine stateMachine) : base(stateMachine)
     {

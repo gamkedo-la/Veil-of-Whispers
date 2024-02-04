@@ -8,7 +8,7 @@ public class EnemyPunchRState : EnemyBaseState
 
     private const float CrossFadeDuration = 0.1f;
 
-    private float duration = 1f;
+    private float duration = 0.5f;
 
 
     public EnemyPunchRState(EnemyStateMachine stateMachine) : base(stateMachine)
