@@ -20,8 +20,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
     public event Action TargetEvent;
     public event Action CancelEvent;
     public event Action JumpEvent;
-    private int  punchFlag;
-    private int  kickFlag;
+    private int  attackFlag;
     private bool jumpCheck;
 
 
@@ -37,8 +36,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
        playerInput.Player.Enable();
        isCrouch = false;
        jumpCheck = false;
-       punchFlag = 0;
-       kickFlag = 0;
+       attackFlag = 0;
     }
     private void OnDestroy()
     {
@@ -133,40 +131,36 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
         jumpCheck = false;
     }
 
-    public void OnPunch(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-            if (punchFlag == 0)
-            {
-                isPunchR = true;
-                punchFlag = 1;
-            }
 
-            else if (punchFlag == 1)
-            {
-                isPunchL = true;
-                punchFlag = 0;
-            }
-        }
-       
-    }
-
-    public void OnKick(InputAction.CallbackContext context)
+    public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            if (kickFlag == 0)
+            if (attackFlag == 0)
             {
-                isKickR = true;
-                kickFlag = 1;
+                isPunchR = true;
+                attackFlag = 1;
             }
 
-            else if (kickFlag == 1)
+            else if (attackFlag == 1)
+            {
+                isKickR = true;
+                attackFlag = 2;
+            }
+
+            else if (attackFlag == 2)
+            {
+                isPunchL = true;
+                attackFlag = 3;
+            }
+
+
+            else if (attackFlag == 3)
             {
                 isKickL = true;
-                kickFlag = 0;
+                attackFlag = 0;
             }
         }
+
     }
 }
