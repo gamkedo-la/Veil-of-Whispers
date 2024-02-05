@@ -15561,7 +15561,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -17460,7 +17460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1719049237
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23950,6 +23950,7 @@ MonoBehaviour:
   maxHealth: 2
   healthDisplay: {fileID: 1027149769}
   countEnemy: 0
+  gameOverMenu: {fileID: 1719049236}
 --- !u!114 &1150822211789303877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27296,7 +27297,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -3.2000122, y: 175}
+  m_AnchoredPosition: {x: -3.2000122, y: 206}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4953313009751528065
@@ -28066,7 +28067,7 @@ PrefabInstance:
     - target: {fileID: 2180802308928204003, guid: 984296809704a274888c5ad0295a4c42,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.16
+      value: -4.95
       objectReference: {fileID: 0}
     - target: {fileID: 2754554888992210605, guid: 984296809704a274888c5ad0295a4c42,
         type: 3}

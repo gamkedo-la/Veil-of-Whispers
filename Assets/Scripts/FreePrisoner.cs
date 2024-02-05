@@ -18,6 +18,7 @@ public class FreePrisoner : MonoBehaviour
         {
             winPanel.SetActive(true);
             gameOver.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
