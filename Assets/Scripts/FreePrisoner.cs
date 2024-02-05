@@ -7,6 +7,8 @@ public class FreePrisoner : MonoBehaviour
     public  Transform player;
     public Animator animator;
     public GameObject winPanel;
+    public GameObject gameOver;
+
 
     void Update()
     {
@@ -15,6 +17,7 @@ public class FreePrisoner : MonoBehaviour
         if(dist < 5f)
         {
             winPanel.SetActive(true);
+            gameOver.SetActive(true);
         }
     }
 }

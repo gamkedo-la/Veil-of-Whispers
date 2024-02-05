@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     private EnemyDeathEffect enemyDeathEffect;
     public TMP_Text healthDisplay;
     public bool countEnemy = true;
+    public GameObject gameOverMenu;
     private int health;
 
 
@@ -24,6 +25,8 @@ public class Health : MonoBehaviour
     private void Start()
     {
         enemyDeathEffect = GetComponent<EnemyDeathEffect>();
+        gameOverMenu.SetActive(false);
+
         health = maxHealth;
         if (healthDisplay)
         {
@@ -90,6 +93,7 @@ public class Health : MonoBehaviour
             if (gameObject.CompareTag("Player"))
             {
                 ChangeTint();
+                AppearGameOver();
             }
         }
 
@@ -104,6 +108,11 @@ public class Health : MonoBehaviour
     {
         RenderSettings.ambientLight = Color.red;
 
+    }
+
+    private void AppearGameOver()
+    {
+        gameOverMenu.SetActive(true);
     }
 
 }
