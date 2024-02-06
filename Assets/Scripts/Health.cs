@@ -32,11 +32,6 @@ public class Health : MonoBehaviour
         {
             UpdateHealthDisplay();
         }
-
-        if(countEnemy)
-        {
-            EnemyCounter.Instance.CountNewEnemy();
-        }
     }
 
 

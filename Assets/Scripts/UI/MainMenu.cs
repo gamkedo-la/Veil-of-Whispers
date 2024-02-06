@@ -11,22 +11,22 @@ namespace UI
         [SerializeField]
         private Button SettingsButton;
         [SerializeField]
-        private Button QuitButton;
+        private Button MenuButton;
 
         private void Start()
         {
             PlayButton.onClick.AddListener(() =>
             {
-                SceneManager.LoadScene("Scenes/Level");
+                SceneManager.LoadScene("Level");
             });
             SettingsButton.onClick.AddListener(() =>
             {
                 Debug.Log("Settings button");
             });
-            QuitButton.onClick.AddListener(() =>
+            MenuButton.onClick.AddListener(() =>
             {
                 #if UNITY_EDITOR
-                Debug.Log("Quit Button");
+                Debug.Log("MainMenu");
                 #else
                 Application.Quit();
                 #endif

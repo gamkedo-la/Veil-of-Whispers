@@ -33,5 +33,9 @@ public class StoryHandler : MonoBehaviour
         uiItems[0].SetActive(true);
         backgroundPanel.SetActive(false);
 
+        foreach (GameObject item in uiItems)
+        {
+            item.SetActive(true);
+        }
     }
 }

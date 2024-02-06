@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class PrisonerSlider : MonoBehaviour
 {
     public Slider mySlider;
-    public float decreaseRate = 0.1f; 
+    public float decreaseRate = 0.1f;
+    public GameObject gameOver;
 
-    void Start()
+    private void Start()
     {
-        mySlider.value = 1f;
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -22,5 +23,11 @@ public class PrisonerSlider : MonoBehaviour
     {
         mySlider.value -= decreaseRate * Time.deltaTime;
         mySlider.value = Mathf.Clamp(mySlider.value, mySlider.minValue, mySlider.maxValue);
+
+        if(mySlider.value <=0 )
+        {
+            gameOver.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
