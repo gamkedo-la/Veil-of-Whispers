@@ -102,7 +102,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -5590,6 +5590,7 @@ GameObject:
   - component: {fileID: 8874782174930168969}
   - component: {fileID: 4502800028139361396}
   - component: {fileID: 8951362953795551236}
+  - component: {fileID: 2339915892111019865}
   m_Layer: 0
   m_Name: large castle block
   m_TagString: Untagged
@@ -5768,30 +5769,30 @@ MonoBehaviour:
   - {x: -60.83931, y: -128, z: 0}
   - {x: 128, y: -128, z: 2.842171e-15}
   m_Textures0:
-  - {x: -0.39145124, y: -1.085579}
-  - {x: -2.3914514, y: -1.085579}
-  - {x: -0.39145124, y: 0.2780142}
-  - {x: -2.3914514, y: 0.2780142}
-  - {x: -0.45725632, y: -1.1159238}
-  - {x: -2.4572563, y: -1.1159238}
-  - {x: -0.45725632, y: 0.28578532}
-  - {x: -2.4572563, y: 0.28578532}
-  - {x: 2.391451, y: -1.0855792}
-  - {x: 0.39145124, y: -1.0855792}
-  - {x: 2.391451, y: 0.27801418}
-  - {x: 0.39145124, y: 0.27801418}
-  - {x: 2.4572566, y: -1.1159238}
-  - {x: 0.45725656, y: -1.1159238}
-  - {x: 2.4572566, y: 0.28578532}
-  - {x: 0.45725656, y: 0.28578532}
-  - {x: 0.39145124, y: -0.44482267}
-  - {x: 2.3914514, y: -0.44482267}
-  - {x: 0.39145124, y: -2.3904376}
-  - {x: 2.391451, y: -2.3904376}
-  - {x: -0.39145124, y: -2.3904376}
-  - {x: -2.391451, y: -2.3904376}
-  - {x: -0.39145124, y: -0.44482267}
-  - {x: -2.3914514, y: -0.44482267}
+  - {x: 0.64435005, y: 0}
+  - {x: -1.35565, y: 0}
+  - {x: 0.64435005, y: 1.3635933}
+  - {x: -1.35565, y: 1.3635933}
+  - {x: -0.34838593, y: 0}
+  - {x: -2.3483858, y: 0}
+  - {x: -0.34838593, y: 1.4017093}
+  - {x: -2.3483858, y: 1.4017093}
+  - {x: 1.35565, y: 0}
+  - {x: -0.6443501, y: 0}
+  - {x: 1.35565, y: 1.3635935}
+  - {x: -0.6443501, y: 1.3635935}
+  - {x: 2.3483863, y: 0}
+  - {x: 0.34838593, y: 0}
+  - {x: 2.3483863, y: 1.4017093}
+  - {x: 0.34838593, y: 1.4017093}
+  - {x: -0.64435005, y: -0.3389125}
+  - {x: 1.35565, y: -0.3389125}
+  - {x: -0.64435005, y: -2.2845278}
+  - {x: 1.3556498, y: -2.2845278}
+  - {x: 0.64435005, y: -2.2845278}
+  - {x: -1.3556498, y: -2.2845278}
+  - {x: 0.64435005, y: -0.3389125}
+  - {x: -1.35565, y: -0.3389125}
   m_Textures2: []
   m_Textures3: []
   m_Tangents:
@@ -5799,9 +5800,9 @@ MonoBehaviour:
   - {x: -1, y: 0, z: -7.525369e-18, w: -1}
   - {x: -1, y: 0, z: -7.525369e-18, w: -1}
   - {x: -1, y: 0, z: 0, w: -1}
-  - {x: 0.00000008306169, y: -1.3028486e-38, z: 1, w: -1}
-  - {x: 0.00000008306169, y: -6.514243e-39, z: 1, w: -1}
-  - {x: 0.00000008306169, y: -6.514243e-39, z: 1, w: -1}
+  - {x: 0.00000008306169, y: 0, z: 1, w: -1}
+  - {x: 0.00000008306169, y: 0, z: 1, w: -1}
+  - {x: 0.00000008306169, y: 0, z: 1, w: -1}
   - {x: 0.00000008306169, y: 0, z: 1, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
   - {x: 1, y: 0, z: 0, w: -1}
@@ -5933,6 +5934,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!208 &2339915892111019865
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147076590393766983}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 94.420006, y: 64.375, z: 91.852005}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 33.58, y: -63.625004, z: -91.852005}
+  m_TimeToStationary: 0.5
 --- !u!1 &3992648192299912799
 GameObject:
   m_ObjectHideFlags: 0
@@ -6035,7 +6052,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -11611,7 +11628,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -17187,7 +17204,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30

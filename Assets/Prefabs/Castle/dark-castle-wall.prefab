@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 368736988741878708}
   - component: {fileID: 3269496072783811229}
   - component: {fileID: 8726247532199820049}
+  - component: {fileID: 7524632176732008788}
   m_Layer: 0
   m_Name: dark-castle-wall
   m_TagString: Untagged
@@ -5785,3 +5786,19 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!208 &7524632176732008788
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4099612538240505288}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 7.8750005, y: 4.7130003, z: 1.194}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 3.7910001, z: 0.076000005}
+  m_TimeToStationary: 0.5

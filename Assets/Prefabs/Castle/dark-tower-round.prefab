@@ -1659,7 +1659,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -1677,6 +1677,7 @@ GameObject:
   - component: {fileID: 2301394087522590204}
   - component: {fileID: 327748770838017454}
   - component: {fileID: 6610546888022777832}
+  - component: {fileID: 5448016169267419227}
   m_Layer: 0
   m_Name: dark-tower-round
   m_TagString: Untagged
@@ -10871,3 +10872,19 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!208 &5448016169267419227
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8284735123684645198}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.092, y: 7.07, z: 4.092}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 7.0790005, z: -0.061000004}
+  m_TimeToStationary: 0.5
