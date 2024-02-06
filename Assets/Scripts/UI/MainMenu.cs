@@ -25,11 +25,9 @@ namespace UI
             });
             MenuButton.onClick.AddListener(() =>
             {
-                #if UNITY_EDITOR
-                Debug.Log("MainMenu");
-                #else
-                Application.Quit();
-                #endif
+               SceneManager.LoadScene("MainMenu");
+
+               
             });
         }
     }

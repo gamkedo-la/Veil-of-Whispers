@@ -14,11 +14,13 @@ public class FreePrisoner : MonoBehaviour
     {
         float dist = Vector3.Distance(transform.position, player.position);
 
-        if(dist < 5f)
+        if(dist < 25f)
         {
             winPanel.SetActive(true);
             gameOver.SetActive(true);
             Time.timeScale = 0;
         }
+
+        Debug.Log(dist);
     }
 }

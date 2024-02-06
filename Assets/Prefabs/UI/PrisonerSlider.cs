@@ -8,6 +8,7 @@ public class PrisonerSlider : MonoBehaviour
     public Slider mySlider;
     public float decreaseRate = 0.1f;
     public GameObject gameOver;
+    public GameObject loosePanel;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class PrisonerSlider : MonoBehaviour
         if(mySlider.value <=0 )
         {
             gameOver.SetActive(true);
+            loosePanel.SetActive(true);
             Time.timeScale = 0f;
         }
     }
