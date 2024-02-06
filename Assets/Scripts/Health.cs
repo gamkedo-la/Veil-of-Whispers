@@ -17,6 +17,8 @@ public class Health : MonoBehaviour
     public TMP_Text healthDisplay;
     public bool countEnemy = true;
     public GameObject gameOverMenu;
+    public GameObject looseMenu;
+
     private int health;
 
 
@@ -26,6 +28,7 @@ public class Health : MonoBehaviour
     {
         enemyDeathEffect = GetComponent<EnemyDeathEffect>();
         gameOverMenu.SetActive(false);
+        looseMenu.SetActive(false);
 
         health = maxHealth;
         if (healthDisplay)

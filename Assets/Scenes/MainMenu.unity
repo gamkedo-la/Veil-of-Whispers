@@ -328,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayButton: {fileID: 536912563}
   SettingsButton: {fileID: 829398163}
-  QuitButton: {fileID: 0}
+  MenuButton: {fileID: 829398163}
 --- !u!224 &49132951 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508928995718510472, guid: dd00af3c24ab3bc43bf9ccb0218300f0,

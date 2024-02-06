@@ -1137,6 +1137,7 @@ MonoBehaviour:
   healthDisplay: {fileID: 0}
   countEnemy: 1
   gameOverMenu: {fileID: 0}
+  looseMenu: {fileID: 0}
 --- !u!114 &3925685459018343691
 MonoBehaviour:
   m_ObjectHideFlags: 0
