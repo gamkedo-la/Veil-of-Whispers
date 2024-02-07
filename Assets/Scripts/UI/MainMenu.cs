@@ -37,7 +37,7 @@ namespace UI
 
             options.onClick.AddListener(() =>
             {
-               optionsMenu.SetActive(true);
+                optionsMenu.SetActive(true);
                 Time.timeScale = 0;
             });
 

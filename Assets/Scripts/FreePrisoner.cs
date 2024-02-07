@@ -21,6 +21,5 @@ public class FreePrisoner : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        Debug.Log(dist);
     }
 }

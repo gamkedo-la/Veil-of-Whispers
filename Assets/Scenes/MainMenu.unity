@@ -329,6 +329,9 @@ MonoBehaviour:
   PlayButton: {fileID: 536912563}
   SettingsButton: {fileID: 829398163}
   MenuButton: {fileID: 829398163}
+  options: {fileID: 536912563}
+  back: {fileID: 536912563}
+  optionsMenu: {fileID: 646001946}
 --- !u!224 &49132951 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508928995718510472, guid: dd00af3c24ab3bc43bf9ccb0218300f0,
@@ -5342,7 +5345,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 646001945}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 646001946}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -5649,6 +5652,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd00af3c24ab3bc43bf9ccb0218300f0, type: 3}
+--- !u!1 &646001946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1078018801817828251, guid: dd00af3c24ab3bc43bf9ccb0218300f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 646001945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &669164207
 GameObject:
   m_ObjectHideFlags: 0
