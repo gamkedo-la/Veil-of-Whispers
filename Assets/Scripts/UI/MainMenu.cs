@@ -12,6 +12,11 @@ namespace UI
         private Button SettingsButton;
         [SerializeField]
         private Button MenuButton;
+        [SerializeField]
+        private Button options;
+        [SerializeField]
+        private Button back;
+        public GameObject optionsMenu;
 
         private void Start()
         {
@@ -26,8 +31,21 @@ namespace UI
             MenuButton.onClick.AddListener(() =>
             {
                SceneManager.LoadScene("MainMenu");
+            });
 
-               
+
+
+            options.onClick.AddListener(() =>
+            {
+               optionsMenu.SetActive(true);
+                Time.timeScale = 0;
+            });
+
+
+            back.onClick.AddListener(() =>
+            {
+               optionsMenu.SetActive(false);
+               Time.timeScale = 1;
             });
         }
     }
