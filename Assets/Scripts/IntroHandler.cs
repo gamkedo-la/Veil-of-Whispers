@@ -25,15 +25,13 @@ public class IntroHandler : MonoBehaviour
 
             if(!sound)
             {
-                AudioSource.PlayClipAtPoint(introClip, Camera.main.transform.position);
+                AudioSource.PlayClipAtPoint(introClip, Camera.main.transform.position,1f);
                 sound = true;
             }
-
-            timer = 0;
         }
 
 
-        if (timer > 1.5f)
+        if (timer > 2f)
         {
             handleIntro.SetActive(false);
         }
