@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class PrisonerBlocker : MonoBehaviour
 {
-    // Start is called before the first frame update
+    float timer;
+    public GameObject warningText;
     void Start()
     {
-        
+        warningText.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timer = Time.time;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            warningText.SetActive(true);
+            timer = 0;
+
+            if(timer >= 0.5)
+            {
+                warningText.SetActive(false);
+            }
+        }
     }
 }
