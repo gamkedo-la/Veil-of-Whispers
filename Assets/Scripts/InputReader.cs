@@ -92,32 +92,6 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
 
     }
 
-    public void OnPause(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            if (!isGamePaused)
-            {
-                //Pause section
-                GameplayUI.Instance.PauseIndicator.SetActive(true);
-                Time.timeScale = 0f;
-                isGamePaused = true;                                
-                Debug.Log("Game Paused");
-            }
-            else
-            {
-                GameplayUI.Instance.PauseIndicator.SetActive(false);
-                //Resume Section
-                Time.timeScale = 1f;
-
-                isGamePaused = false;
-                Debug.Log("Game Resumed");
-            }
-        }
-    }
-
-   
-
     public bool GetJump()
     {
         return jumpCheck;
