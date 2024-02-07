@@ -38,10 +38,7 @@ public class InputReader : MonoBehaviour,PlayerInput.IPlayerActions
        jumpCheck = false;
        attackFlag = 0;
     }
-    private void OnDestroy()
-    {
-       playerInput.Player.Disable();
-    }
+   
     public void OnLook(InputAction.CallbackContext context)
     {
         LookValue = context.ReadValue<Vector2>();

@@ -32,16 +32,18 @@ public class PlayerStateMachine : StateMachine
 
     public AudioState state { get; private set; }
 
-
-
     bool alreadyDied = false;
+    float oldMovementSpeed;
+    float oldAnimationSpeed;
 
 
     void Start()
     {
         MainCameraTransform = Camera.main.transform;
         state = GetComponent<AudioState>();
-        SwitchState(new PlayerFreeLookState(this)); 
+        SwitchState(new PlayerFreeLookState(this));
+        oldMovementSpeed = MovementSpeed;
+        oldAnimationSpeed = animator.speed;
     }
 
     private void OnEnable ()
@@ -85,4 +87,26 @@ public class PlayerStateMachine : StateMachine
         Controller.enabled = false;
     }
 
+    public void FastMovement()
+    {
+        if (Input.GetKey(KeyCode.W)) 
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                MovementSpeed = 60;
+                animator.speed = 2;
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                MovementSpeed = 50;
+                animator.speed = 1;
+            }
+        }
+
+        else 
+        {
+            MovementSpeed = 50;
+            animator.speed = 1;
+        }
+    }
 }

@@ -83,11 +83,6 @@ public class Health : MonoBehaviour
 
             OnDie?.Invoke();
 
-            if (countEnemy)
-            {
-                EnemyCounter.Instance.RecordDeath();
-            }
-
             if (gameObject.CompareTag("Player"))
             {
                 ChangeTint();
