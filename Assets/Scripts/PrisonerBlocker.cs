@@ -13,7 +13,8 @@ public class PrisonerBlocker : MonoBehaviour
     // Update is called once per frame
 
 
-    private void OnCollisionEnter(Collision other)
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -21,13 +22,12 @@ public class PrisonerBlocker : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            
             warningText.SetActive(false);
-            
         }
     }
+   
 }
