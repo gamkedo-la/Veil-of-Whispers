@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PrisonerBlocker : MonoBehaviour
 {
-    float timer;
     public GameObject warningText;
     void Start()
     {
@@ -12,22 +11,23 @@ public class PrisonerBlocker : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        timer = Time.time;
-    }
+
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             warningText.SetActive(true);
-            timer = 0;
+        }
+    }
 
-            if(timer >= 0.5)
-            {
-                warningText.SetActive(false);
-            }
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            
+            warningText.SetActive(false);
+            
         }
     }
 }
