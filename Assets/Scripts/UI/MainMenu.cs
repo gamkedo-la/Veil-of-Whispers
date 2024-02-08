@@ -17,6 +17,7 @@ namespace UI
         [SerializeField]
         private Button back;
         public GameObject optionsMenu;
+        public GameObject compass;
 
         private void Start()
         {
@@ -38,6 +39,7 @@ namespace UI
             options.onClick.AddListener(() =>
             {
                 optionsMenu.SetActive(true);
+                compass.SetActive(false);
                 Time.timeScale = 0;
             });
 
@@ -45,7 +47,9 @@ namespace UI
             back.onClick.AddListener(() =>
             {
                optionsMenu.SetActive(false);
-               Time.timeScale = 1;
+               compass.SetActive(true);
+
+                Time.timeScale = 1;
             });
         }
     }

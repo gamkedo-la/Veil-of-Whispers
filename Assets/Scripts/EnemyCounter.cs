@@ -5,7 +5,7 @@ using TMPro;
 public class EnemyCounter : MonoBehaviour
 {
     public static EnemyCounter Instance;
-    public GameObject winPanel;
+    public GameObject prisonerBlocker;
     private TMP_Text enemyDisplay;
     int enemiesTotal = 0;
     int enemiesAlive = 0;
@@ -31,10 +31,10 @@ public class EnemyCounter : MonoBehaviour
     {
         enemiesAlive--;
         UpdateText();
+
         if(enemiesAlive == 0)
         {
-            Debug.Log("Win screen");
-            winPanel.SetActive(true);
+            prisonerBlocker.SetActive(false);
         }
     }
 

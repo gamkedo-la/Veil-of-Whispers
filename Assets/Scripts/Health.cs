@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     private EnemyDeathEffect enemyDeathEffect;
     public TMP_Text healthDisplay;
     public bool countEnemy = true;
+    public EnemyCounter enemyCounter;
     public GameObject gameOverMenu;
     public GameObject looseMenu;
 
@@ -34,6 +35,11 @@ public class Health : MonoBehaviour
         if (healthDisplay)
         {
             UpdateHealthDisplay();
+        }
+
+        if (countEnemy)
+        {
+            enemyCounter.CountNewEnemy();
         }
     }
 
@@ -73,12 +79,18 @@ public class Health : MonoBehaviour
             OnTakeDamage?.Invoke();
         }
 
+     
 
         if (health <= 0)
         {
             if (gameObject.CompareTag("Enemy"))
             {
                 enemyDeathEffect.InstantiateObject();
+            }
+
+            if (countEnemy)
+            {
+                enemyCounter.RecordDeath();
             }
 
             OnDie?.Invoke();
@@ -96,6 +108,8 @@ public class Health : MonoBehaviour
     {
         healthDisplay.text ="Health: " + health + "/" + maxHealth;
     }
+
+
 
     private void ChangeTint()
     {
