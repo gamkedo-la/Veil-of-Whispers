@@ -14,7 +14,6 @@ public class Health : MonoBehaviour
     public event Action OnTakeDamage;
     public event Action OnDie;
     private EnemyDeathEffect enemyDeathEffect;
-    public TMP_Text healthDisplay;
     public bool countEnemy = true;
     public EnemyCounter enemyCounter;
     public GameObject gameOverMenu;
@@ -36,10 +35,7 @@ public class Health : MonoBehaviour
         looseMenu.SetActive(false);
 
         health = maxHealth;
-        if (healthDisplay)
-        {
-            UpdateHealthDisplay();
-        }
+       
 
         if (countEnemy)
         {
@@ -65,10 +61,7 @@ public class Health : MonoBehaviour
         if (health == 0) { return; }
         health = Mathf.Max(health - damage, 0);
 
-        if (healthDisplay)
-        {
-            UpdateHealthDisplay();
-        }
+     
 
         if (tag == "RightPunch")
         {
@@ -119,12 +112,6 @@ public class Health : MonoBehaviour
         }
 
     }
-
-    private void UpdateHealthDisplay()
-    {
-        healthDisplay.text ="Health: " + health + "/" + maxHealth;
-    }
-
 
 
     private void ChangeTint()
