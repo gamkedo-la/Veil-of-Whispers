@@ -25,13 +25,6 @@ public class EnemyAttackingState : EnemyBaseState
             return;
         }
 
-        if(!ControllerVisibility())
-        {
-            stateMachine.SwitchState(new EnemyIdleState(stateMachine));
-        }
-
-
-
         FacePlayer();
 
     }
@@ -40,8 +33,5 @@ public class EnemyAttackingState : EnemyBaseState
     {
 
     }
-
-
-
 
 }

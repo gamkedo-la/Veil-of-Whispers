@@ -8,7 +8,6 @@ public class EnemyChasingState : EnemyBaseState
 {
     private readonly int EnemyBlendTreeHash = Animator.StringToHash("EnemyBlend");
     private readonly int MoveHash = Animator.StringToHash("move");
-    private AudioState audioState;
 
 
     private const float CrossFadeDuration = 0.1f;
@@ -19,12 +18,11 @@ public class EnemyChasingState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.animator.CrossFadeInFixedTime(EnemyBlendTreeHash, CrossFadeDuration);
-        audioState = stateMachine.GetComponent<AudioState>();
     }
 
     public override void Tick(float deltaTime)
     {
-        if (!IsInChaseRange() || !ControllerVisibility())
+        if (!IsInChaseRange())
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;

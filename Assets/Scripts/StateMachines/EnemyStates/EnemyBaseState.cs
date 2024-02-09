@@ -43,9 +43,5 @@ public abstract class EnemyBaseState : State
         return playerDistanceSqr <= stateMachine.AttackRange * stateMachine.AttackRange;
     }
 
-    protected bool ControllerVisibility()
-    {
-        CharacterController controller = stateMachine.Player.GetComponent<CharacterController>();
-        return controller.enabled;
-    }
+   
 }

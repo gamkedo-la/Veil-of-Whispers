@@ -22,11 +22,15 @@ public class Health : MonoBehaviour
 
     private int health;
 
+    float timer;
+    bool gameFinished;
+
 
 
 
     private void Start()
     {
+        gameFinished = false;   
         enemyDeathEffect = GetComponent<EnemyDeathEffect>();
         gameOverMenu.SetActive(false);
         looseMenu.SetActive(false);
@@ -43,6 +47,18 @@ public class Health : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(gameFinished == true)
+        {
+            timer += Time.deltaTime;
+            
+            if(timer >= 2f)
+            {
+                AppearGameOver();
+            }
+        }
+    }
 
     public void DealDamage(int damage, String tag)
     {
@@ -97,8 +113,8 @@ public class Health : MonoBehaviour
 
             if (gameObject.CompareTag("Player"))
             {
+                gameFinished = true;
                 ChangeTint();
-                AppearGameOver();
             }
         }
 
@@ -119,7 +135,13 @@ public class Health : MonoBehaviour
 
     private void AppearGameOver()
     {
-        gameOverMenu.SetActive(true);
+
+        if (timer >= 1.5f)
+        {
+            gameOverMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+    
     }
 
 }

@@ -91,4 +91,12 @@ public class EnemyStateMachine : StateMachine
         SwitchState(new EnemyDeadState(this));
     }
 
+    public void ControllerVisibility()
+    {
+        if(Controller.enabled == false)
+        {
+           SwitchState(new EnemyIdleState(this));
+        }
+    }
+
 } 

@@ -332,6 +332,7 @@ MonoBehaviour:
   options: {fileID: 536912563}
   back: {fileID: 536912563}
   optionsMenu: {fileID: 646001946}
+  compass: {fileID: 38968702}
 --- !u!224 &49132951 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1508928995718510472, guid: dd00af3c24ab3bc43bf9ccb0218300f0,
