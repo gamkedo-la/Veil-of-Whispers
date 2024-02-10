@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-  public GameObject OptionsPanel; 
-  public void MainMenuScene()
+  public GameObject OptionsPanel;
+  public GameObject Compass;
+
+    public void MainMenuScene()
   {
        SceneManager.LoadScene("MainMenu");
   }
@@ -25,15 +27,17 @@ public class LevelLoader : MonoBehaviour
   public void Options()
   {
      OptionsPanel.SetActive(true);
+     Compass.SetActive(false);
   }
 
    
   public void BackFromOptions()
   {
     OptionsPanel.SetActive(false);
+    Compass.SetActive(true);
   }
 
-  public void BackFromMenu()
+    public void BackFromMenu()
   {
       SceneManager.LoadScene("MainMenu");
   }

@@ -6267,6 +6267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OptionsPanel: {fileID: 622854293}
+  Compass: {fileID: 622854293}
 --- !u!1 &7517263878846913228
 GameObject:
   m_ObjectHideFlags: 0
