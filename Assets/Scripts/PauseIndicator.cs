@@ -13,14 +13,14 @@ public class PauseIndicator : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && pauseBool == false)
+        if (Input.GetKeyDown(KeyCode.P) && pauseBool == false)
         {
             pauseMenu.SetActive(true);
             pauseBool = true;
             Time.timeScale = 0f;
         }
 
-        else if(Input.GetKeyDown(KeyCode.Escape) && pauseBool == true)
+        else if(Input.GetKeyDown(KeyCode.P) && pauseBool == true)
         {
             pauseMenu.SetActive(false);
             pauseBool = false;
