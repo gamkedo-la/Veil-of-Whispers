@@ -8,6 +8,14 @@ namespace UI
     {
         [SerializeField]
         private Button PlayButton;
+        [SerializeField]
+        private Button MenuButton;
+        [SerializeField]
+        private Button OptionsMenu;
+        [SerializeField]
+        private Button BackButton;
+        [SerializeField]
+        private GameObject OptionsPanel;
 
         private void Start()
         {
@@ -15,6 +23,23 @@ namespace UI
             {
                 SceneManager.LoadScene("Level");
             });
+
+            MenuButton.onClick.AddListener(() =>
+            {
+                SceneManager.LoadScene("MainMenu");
+            });
+
+            OptionsMenu.onClick.AddListener(() =>
+            {
+                OptionsPanel.SetActive(true);
+            });
+
+            BackButton.onClick.AddListener(() =>
+            {
+                OptionsPanel.SetActive(false);
+            });
+
+
 
         }
     }
