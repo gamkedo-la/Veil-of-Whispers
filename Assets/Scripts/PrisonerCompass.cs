@@ -13,6 +13,6 @@ public class PrisonerCompass : MonoBehaviour
     void Update()
     {
         int dist = (int)Vector3.Distance(player.transform.position, prisoner.transform.position);
-        displayLocation.text = "PRISONER Compass: " + dist.ToString();
+        displayLocation.text = "PRISONER DISTANCE: " + dist.ToString();
     }
 }

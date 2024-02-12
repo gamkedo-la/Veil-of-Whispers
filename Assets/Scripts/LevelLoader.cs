@@ -7,6 +7,13 @@ public class LevelLoader : MonoBehaviour
 {
   public GameObject OptionsPanel;
   public GameObject Compass;
+  public GameObject startButton;
+  private StoryHandler StoryHandler;
+
+  private void Start()
+  {
+     StoryHandler = FindObjectOfType<StoryHandler>();
+  }
 
     public void MainMenuScene()
   {
@@ -37,7 +44,13 @@ public class LevelLoader : MonoBehaviour
     Compass.SetActive(true);
   }
 
-    public void BackFromMenu()
+  public void GameBegins()
+  {
+      StoryHandler.ExitStory();
+      startButton.SetActive(false);
+  }
+
+  public void BackFromMenu()
   {
       SceneManager.LoadScene("MainMenu");
   }
